@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}HistoryEven index{% endblock %}
+
+{% block body %}
+    <h1>HistoryEven index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Photo</th>
+                <th>Video</th>
+                <th>Music</th>
+                <th>Date</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for history_even in history_evens %}
+            <tr>
+                <td>{{ history_even.id }}</td>
+                <td>{{ history_even.title }}</td>
+                <td>{{ history_even.description }}</td>
+                <td>{{ history_even.photo }}</td>
+                <td>{{ history_even.video }}</td>
+                <td>{{ history_even.music }}</td>
+                <td>{{ history_even.date ? history_even.date|date('Y-m-d H:i:s') : '' }}</td>
+                <td>
+                    <a href="{{ path('app_history_even_show', {'id': history_even.id}) }}">show</a>
+                    <a href="{{ path('app_history_even_edit', {'id': history_even.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="8">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_history_even_new') }}">Create new</a>
+{% endblock %}

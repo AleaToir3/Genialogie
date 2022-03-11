@@ -1,0 +1,93 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil {{parent()}} {% endblock %}
+
+{% block body %}
+
+ <h1>HistoryEven</h1>
+
+    <table class="table">
+        <tbody>
+
+        {% for history_even in history_evens %}
+           
+           
+            <tr>
+                <th>Title</th>
+                <td>{{ history_even.title }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ history_even.description }}</td>
+            </tr>
+            <tr>
+                <th>Photo</th>
+                <td>{{ history_even.photo }}</td>
+            </tr>
+            <tr>
+                <th>Video</th>
+                <td>{{ history_even.video }}</td>
+            </tr>
+            <tr>
+                <th>Music</th>
+                <td>{{ history_even.music }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ history_even.date ? history_even.date|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+
+             {# ------ DELETE ARTICLE HISTORIQUE SI BESOIN -----
+             ------ DELETE ARTICLE HISTORIQUE SI BESOIN ----- #}
+
+             {# <form method="post" action="{{ path('app_history_even_delete', {'id': history_even.id}) }}" onsubmit="return confirm('Are you sure you want to delete this item?');">
+                <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ history_even.id) }}">
+                <button class="btn">Delete</button>
+            </form> #}
+
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+   
+<hr>
+
+    <h1>even persooo </h1>
+    <table class="table">
+        <thead>
+            <tr>         
+                <th>Title</th>
+                <th>Description</th>
+                <th>Date</th>
+                <th>MediaUrl</th>
+                <th>IsPrivatee</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for personal_even in personal_evens %}
+            <tr>
+               
+                <td>{{ personal_even.title }}</td>
+                <td>{{ personal_even.description }}</td>
+                <td>{{ personal_even.date ? personal_even.date|date('Y') : '' }}</td>
+                <td>{{ personal_even.mediaUrl }}</td>
+                <td>
+                    <a href="{{ path('app_personal_even_show', {'id': personal_even.id}) }}">show</a>
+                    <a href="{{ path('app_personal_even_edit', {'id': personal_even.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_personal_even_new') }}">Create new</a>
+{% endblock %}

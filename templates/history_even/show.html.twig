@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}HistoryEven{% endblock %}
+
+{% block body %}
+    <h1>HistoryEven</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ history_even.id }}</td>
+            </tr>
+            <tr>
+                <th>Title</th>
+                <td>{{ history_even.title }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ history_even.description }}</td>
+            </tr>
+            <tr>
+                <th>Photo</th>
+                <td>{{ history_even.photo }}</td>
+            </tr>
+            <tr>
+                <th>Video</th>
+                <td>{{ history_even.video }}</td>
+            </tr>
+            <tr>
+                <th>Music</th>
+                <td>{{ history_even.music }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ history_even.date ? history_even.date|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_history_even_index') }}">back to list</a>
+
+    <a href="{{ path('app_history_even_edit', {'id': history_even.id}) }}">edit</a>
+
+    {{ include('history_even/_delete_form.html.twig') }}
+{% endblock %}

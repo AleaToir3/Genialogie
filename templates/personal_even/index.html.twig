@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil Genialogie{% endblock %}
+
+{% block body %}
+    <h1>Genialogie</h1>
+
+    <table class="table">
+        <thead>
+            <tr>         
+                <th>Title</th>
+                <th>Description</th>
+                <th>Date</th>
+                <th>MediaUrl</th>
+                <th>IsPrivatee</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for personal_even in personal_evens %}
+            <tr>
+               
+                <td>{{ personal_even.title }}</td>
+                <td>{{ personal_even.description }}</td>
+                <td>{{ personal_even.date ? personal_even.date|date('Y') : '' }}</td>
+                <td>{{ personal_even.mediaUrl }}</td>
+                <td>
+                    <a href="{{ path('app_personal_even_show', {'id': personal_even.id}) }}">show</a>
+                    <a href="{{ path('app_personal_even_edit', {'id': personal_even.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_personal_even_new') }}">Create new</a>
+{% endblock %}
