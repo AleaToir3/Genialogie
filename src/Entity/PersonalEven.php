@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\PersonalEvenRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -33,14 +35,30 @@ class PersonalEven
     private $date;
 
     /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $mediaUrl;
-
-    /**
      * @ORM\Column(type="boolean")
      */
     private $isPrivatee;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Emotion::class, mappedBy="personalEven")
+     */
+    private $emotione;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Frise::class, inversedBy="personalEvens")
+     */
+    private $frise;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Media::class, mappedBy="personalEven")
+     */
+    private $media;
+
+    public function __construct()
+    {
+        $this->emotione = new ArrayCollection();
+        $this->media = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -81,19 +99,7 @@ class PersonalEven
         $this->date = $date;
 
         return $this;
-    }
-
-    public function getMediaUrl(): ?string
-    {
-        return $this->mediaUrl;
-    }
-
-    public function setMediaUrl(?string $mediaUrl): self
-    {
-        $this->mediaUrl = $mediaUrl;
-
-        return $this;
-    }
+    } 
 
     public function getIsPrivatee(): ?bool
     {
@@ -103,6 +109,79 @@ class PersonalEven
     public function setIsPrivatee(bool $isPrivatee): self
     {
         $this->isPrivatee = $isPrivatee;
+
+        return $this;
+    }
+
+
+    /**
+     * @return Collection<int, Emotion>
+     */
+    public function getEmotione(): Collection
+    {
+        return $this->emotione;
+    }
+
+    public function addEmotione(Emotion $emotione): self
+    {
+        if (!$this->emotione->contains($emotione)) {
+            $this->emotione[] = $emotione;
+            $emotione->setPersonalEven($this);
+        }
+
+        return $this;
+    }
+
+    public function removeEmotione(Emotion $emotione): self
+    {
+        if ($this->emotione->removeElement($emotione)) {
+            // set the owning side to null (unless already changed)
+            if ($emotione->getPersonalEven() === $this) {
+                $emotione->setPersonalEven(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getFrise(): ?Frise
+    {
+        return $this->frise;
+    }
+
+    public function setFrise(?Frise $frise): self
+    {
+        $this->frise = $frise;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Media>
+     */
+    public function getMedia(): Collection
+    {
+        return $this->media;
+    }
+
+    public function addMedium(Media $medium): self
+    {
+        if (!$this->media->contains($medium)) {
+            $this->media[] = $medium;
+            $medium->setPersonalEven($this);
+        }
+
+        return $this;
+    }
+
+    public function removeMedium(Media $medium): self
+    {
+        if ($this->media->removeElement($medium)) {
+            // set the owning side to null (unless already changed)
+            if ($medium->getPersonalEven() === $this) {
+                $medium->setPersonalEven(null);
+            }
+        }
 
         return $this;
     }

@@ -15,7 +15,6 @@ class PersonalEvenType extends AbstractType
             ->add('title')
             ->add('description')
             ->add('date')
-            ->add('mediaUrl')
             ->add('isPrivatee')
         ;
     }

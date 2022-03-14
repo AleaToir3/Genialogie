@@ -15,19 +15,6 @@ use Symfony\Component\Routing\Annotation\Route;
  */
 class HistoryEvenController extends AbstractController
 {
-
-    
-
-    /**
-     * @Route("/", name="app_history_even_index", methods={"GET"})
-     */
-    public function index(HistoryEvenRepository $historyEvenRepository): Response
-    {
-        return $this->render('frise.html.twig', [
-            'history_evens' => $historyEvenRepository->findAll(),
-        ]);
-    }
-
     /**
      * @Route("/new", name="app_history_even_new", methods={"GET", "POST"})
      */
@@ -39,7 +26,7 @@ class HistoryEvenController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $historyEvenRepository->add($historyEven);
-            return $this->redirectToRoute('app_history_even_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('Home', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('history_even/new.html.twig', [
@@ -53,6 +40,7 @@ class HistoryEvenController extends AbstractController
      */
     public function show(HistoryEven $historyEven): Response
     {
+        
         return $this->render('history_even/show.html.twig', [
             'history_even' => $historyEven,
         ]);
@@ -68,7 +56,7 @@ class HistoryEvenController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $historyEvenRepository->add($historyEven);
-            return $this->redirectToRoute('app_history_even_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('Home', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('history_even/edit.html.twig', [
@@ -86,6 +74,6 @@ class HistoryEvenController extends AbstractController
             $historyEvenRepository->remove($historyEven);
         }
 
-        return $this->redirectToRoute('app_history_even_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('Home', [], Response::HTTP_SEE_OTHER);
     }
 }

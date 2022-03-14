@@ -22,7 +22,6 @@
                 <td>{{ personal_even.title }}</td>
                 <td>{{ personal_even.description }}</td>
                 <td>{{ personal_even.date ? personal_even.date|date('Y') : '' }}</td>
-                <td>{{ personal_even.mediaUrl }}</td>
                 <td>
                     <a href="{{ path('app_personal_even_show', {'id': personal_even.id}) }}">show</a>
                     <a href="{{ path('app_personal_even_edit', {'id': personal_even.id}) }}">edit</a>

@@ -45,22 +45,21 @@ class HistoryEvenRepository extends ServiceEntityRepository
         }
     }
 
-    // /**
-    //  * @return HistoryEven[] Returns an array of HistoryEven objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    /**
+     * @return HistoryEven[] Returns an array of HistoryEven objects
+     */    
+    public function orderByDate($value)
     {
         return $this->createQueryBuilder('h')
-            ->andWhere('h.exampleField = :val')
+            ->andWhere('h.date >= :val')
             ->setParameter('val', $value)
-            ->orderBy('h.id', 'ASC')
-            ->setMaxResults(10)
+            ->orderBy('h.date', 'ASC')
+            ->setMaxResults(5)
             ->getQuery()
             ->getResult()
         ;
     }
-    */
+    
 
     /*
     public function findOneBySomeField($value): ?HistoryEven

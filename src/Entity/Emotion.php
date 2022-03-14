@@ -22,6 +22,11 @@ class Emotion
      */
     private $type;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=PersonalEven::class, inversedBy="emotione")
+     */
+    private $personalEven;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -35,6 +40,18 @@ class Emotion
     public function setType(string $type): self
     {
         $this->type = $type;
+
+        return $this;
+    }
+
+    public function getPersonalEven(): ?PersonalEven
+    {
+        return $this->personalEven;
+    }
+
+    public function setPersonalEven(?PersonalEven $personalEven): self
+    {
+        $this->personalEven = $personalEven;
 
         return $this;
     }

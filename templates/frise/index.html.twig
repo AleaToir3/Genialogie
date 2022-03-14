@@ -34,8 +34,14 @@
             </tr>
             <tr>
                 <th>Date</th>
-                <td>{{ history_even.date ? history_even.date|date('Y-m-d H:i:s') : '' }}</td>
+                <td>{{ history_even.date ? history_even.date|date('Y') : '' }}</td>
             </tr>
+            <td>
+                    <a href="{{ path('app_history_even_show', {'id': history_even.id}) }}">show</a>
+                    <a href="{{ path('app_history_even_edit', {'id': history_even.id}) }}">edit</a>
+                    <a href="{{ path('app_history_even_new', {'id': history_even.id}) }}">Create new History</a>
+                </td>
+
 
              {# ------ DELETE ARTICLE HISTORIQUE SI BESOIN -----
              ------ DELETE ARTICLE HISTORIQUE SI BESOIN ----- #}
@@ -75,7 +81,7 @@
                 <td>{{ personal_even.title }}</td>
                 <td>{{ personal_even.description }}</td>
                 <td>{{ personal_even.date ? personal_even.date|date('Y') : '' }}</td>
-                <td>{{ personal_even.mediaUrl }}</td>
+                {# <td>{{ dump(personal_even.media[0].photo) }}</td> #}
                 <td>
                     <a href="{{ path('app_personal_even_show', {'id': personal_even.id}) }}">show</a>
                     <a href="{{ path('app_personal_even_edit', {'id': personal_even.id}) }}">edit</a>
@@ -90,4 +96,9 @@
     </table>
 
     <a href="{{ path('app_personal_even_new') }}">Create new</a>
+
+
+
+
+    <div>1980 ,,,</div>
 {% endblock %}

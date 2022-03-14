@@ -20,17 +20,6 @@ use Symfony\Component\Routing\Annotation\Route;
 class PersonalEvenController extends AbstractController
 {
     /**
-     * @Route("/", name="app_personal_even_index", methods={"GET"})
-     */
-    public function index(PersonalEvenRepository $personalEvenRepository,HistoryEvenRepository $historyEvenRepository): Response
-    {
-        return $this->render('frise.html.twig', [
-            'personal_evens' => $personalEvenRepository->findAll(),
-            'history_evens' => $historyEvenRepository->findAll()
-        ]);
-    }
-
-    /**
      * @Route("/new", name="app_personal_even_new", methods={"GET", "POST"})
      */
     public function new(Request $request, PersonalEvenRepository $personalEvenRepository): Response
