@@ -17,7 +17,7 @@ class HistoryEvenType extends AbstractType
             ->add('photo')
             ->add('video')
             ->add('music')
-            ->add('date')
+            ->add('date' )
         ;
     }
 

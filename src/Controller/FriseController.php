@@ -20,7 +20,7 @@ class FriseController extends AbstractController
         $eventP = $personalEvenRepository->findBy([], ['date' => 'ASC']);
         $eventDate = [];
         $d = '';
-        $i = 0;
+        $i = -1;
         $j = 0;
         foreach($eventP as $value){
             if($value->getDate()->format('Y') == $d){
@@ -33,15 +33,19 @@ class FriseController extends AbstractController
                 $eventDate[$i]['date'] = $value->getDate()->format('Y');
                 $eventDate[$i]['eventP'][$j] = $value;
                 $d = $value->getDate()->format('Y');
+                // $dateMin = $value->getDate();
+                // $dateMax = $value->getDate();
+                // $dateMax = $dateMax->format('Y-m-d');
+                // $dateMax = new DateTime($dateMax);
+                // $dateMax = $dateMax->modify('+1 month');
+
+                $eventDate[$i]['evenH'] = $historyEvenRepository->findByDate($value->getDate());
             }
         }
-
-        dd($eventDate);
-
-        $date = New DateTime('2018-01-01');
         return $this->render('frise/index.html.twig', [
-            'personal_evens' => $personalEvenRepository->findAll(),
-            'history_evens' => $historyEvenRepository->orderByDate($date)
+            // 'personal_evens' => $personalEvenRepository->findAll(),
+            // 'history_evens' => $historyEvenRepository->orderByDate($date)
+            'evens' => $eventDate,
         ]);
     }
 }

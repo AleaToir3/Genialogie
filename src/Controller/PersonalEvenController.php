@@ -30,7 +30,7 @@ class PersonalEvenController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $personalEvenRepository->add($personalEven);
-            return $this->redirectToRoute('app_personal_even_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('Home', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('personal_even/new.html.twig', [
@@ -59,12 +59,12 @@ class PersonalEvenController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
             $personalEvenRepository->add($personalEven);
-            return $this->redirectToRoute('app_personal_even_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('Home', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('personal_even/edit.html.twig', [
             'personal_even' => $personalEven,
-            'form' => $form,
+            'form' => $form, 
         ]);
     }
 
@@ -77,6 +77,6 @@ class PersonalEvenController extends AbstractController
             $personalEvenRepository->remove($personalEven);
         }
 
-        return $this->redirectToRoute('app_personal_even_index', [], Response::HTTP_SEE_OTHER);
+        return $this->redirectToRoute('Home', [], Response::HTTP_SEE_OTHER);
     }
 }

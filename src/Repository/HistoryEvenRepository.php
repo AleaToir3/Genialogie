@@ -60,6 +60,21 @@ class HistoryEvenRepository extends ServiceEntityRepository
         ;
     }
     
+        /**
+     * @return HistoryEven[] Returns an array of HistoryEven objects
+     */    
+    public function findByDate($dateMin)
+    {
+
+        return $this->createQueryBuilder('h')
+            ->andWhere('h.date >= :val')
+            ->setParameter('val', $dateMin)
+            ->orderBy('h.date', 'ASC')
+            ->setMaxResults(1)
+            ->getQuery()
+            ->getOneOrNullResult()
+        ;
+    }
 
     /*
     public function findOneBySomeField($value): ?HistoryEven
