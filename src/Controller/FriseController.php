@@ -35,6 +35,10 @@ class FriseController extends AbstractController
                 $d = $value->getDate()->format('Y');
                 // $dateMin = $value->getDate();
                 // $dateMax = $value->getDate();
+
+
+
+                &
                 // $dateMax = $dateMax->format('Y-m-d');
                 // $dateMax = new DateTime($dateMax);
                 // $dateMax = $dateMax->modify('+1 month');
@@ -42,6 +46,7 @@ class FriseController extends AbstractController
                 $eventDate[$i]['evenH'] = $historyEvenRepository->findByDate($value->getDate());
             }
         }
+        // dd($eventDate);
         return $this->render('frise/index.html.twig', [
             // 'personal_evens' => $personalEvenRepository->findAll(),
             // 'history_evens' => $historyEvenRepository->orderByDate($date)
