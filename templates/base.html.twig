@@ -14,6 +14,46 @@
         {% endblock %}
     </head>
     <body>
+
+     <!-- DEBUT NAVBAR -->
+        <div class="container-fluid navbar">
+            <a href="#" class="logo-accueil"><img src="./assets/icones/logo-orange.svg" alt="logo"></a>
+            <nav class="container navbar-menu d-flex flex-nowrap justify-content-center">
+                <ul class="container d-flex justify-content-between">
+                    <li><a href="#">Profil</a></li>
+                    <li><a href="#">Notifications</a></li>
+                    <li><a href="#">Bibliothèque</a></li>
+                    <li><a href="#">Partager</a></li>
+                    <li><a href="#">Confidentialité</a></li>
+                    <li><a href="#">Aide</a></li>
+                </ul>
+            </nav>
+            <a href="/logout" class="icone-deconnexion"><img src="./assets/icones/icone-deconnexion-gris.svg" alt="logo"></a>
+        </div>
+     <!-- FIN NAVBAR -->
+
+
+    <!-- DEBUT HEADER -->
+        <header>
+            <div class="container">
+                <div class="d-flex flex-row align-items-center container-header">
+                
+                    <div class="col-12 col-md-9 texte-welcome">
+                        <p>Bienvenue Brigitte</p>
+                        <h1>Votre Genialo’Frise</h1>
+                    </div>
+                
+                    <div class="col-12 col-md-3">
+                        <button type="button" class="btn-outline-lg-ajout">
+                            <img src="assets/icones/icone-ajout-noir.svg" alt="icone ajouter"> J'ajoute un évènement
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
+    <!-- FIN HEADER -->
+
+
         <h1>nav</h1>
         <hr>
         {% block body %}

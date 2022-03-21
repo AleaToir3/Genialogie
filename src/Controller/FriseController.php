@@ -34,11 +34,7 @@ class FriseController extends AbstractController
                 $eventDate[$i]['eventP'][$j] = $value;
                 $d = $value->getDate()->format('Y');
                 // $dateMin = $value->getDate();
-                // $dateMax = $value->getDate();
-
-
-
-                &
+                // $dateMax = $value->getDate();            
                 // $dateMax = $dateMax->format('Y-m-d');
                 // $dateMax = new DateTime($dateMax);
                 // $dateMax = $dateMax->modify('+1 month');
