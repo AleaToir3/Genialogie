@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dossier de travail/assets/css/style.css">
+    <title>base</title>
+
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+</head>
+
+<body>
+
+    <!-- DEBUT NAVBAR PERSO ANNA -->
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light nav-genialogy">
+            <div class="container-fluid justify-content-between">
+                <a class="navbar-brand" href="#"><img src="assets/icones/logo-orange.svg"
+                        alt="logo-orange-genialogy"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse w-100 justify-content-center" id="navbarNavAltMarkup">
+                    <!-- id pour le menu burger, à ne pas modifier le syntaxe -->
+                    <div class="navbar-nav justify-content-between align-items-center navbar-resize navbar-border">
+                        <a class="nav-link link-profil" aria-current="page" href="#">Profil</a>
+                        <a class="nav-link" href="#">Notifications</a>
+                        <a class="nav-link" href="#">Bibliothèque</a>
+                        <a class="nav-link" href="#">Partager</a>
+                        <a class="nav-link" href="#">Confidentialité</a>
+                        <a class="nav-link" href="#">Aide</a>
+                    </div>
+                </div>
+                <a class="log-off" href="#"><img
+                        src="assets/icones/icone-deconnexion-gris.svg" alt="Se déconnecter"></a>
+            </div>
+        </nav>
+    </div>
+
+    <!-- DEBUT HEADER PERSO ANNA -->
+    <header>
+        <div class="container">
+            <div class="row container-header w-100">
+                <!-- <div class="col-12 col-lg-1">
+                    
+                </div>  -->
+                <!-- div vide nécessaire ici ??? -->
+
+                <div class="col-12 col-lg-6 texte-welcome">
+                    <p>Bienvenue Brigitte</p>
+                    <h1>Votre Genialo’Frise</h1>
+                </div>
+                <div class="col-12 col-lg-3">
+                    <!--ceci est un div vide-->
+                </div>
+                <div class="col-12 col-lg-3">
+                    <!-- <a href="assets/icones/icone-ajout-noir.svg"><img src="assets/icones/icone-ajout-noir.svg" alt="icone ajouter">J'ajoute un évènement</a> -->
+                    <!-- <button type="button" class="btn btn-outline-secondary"> <img
+                            src="assets/icones/icone-ajout-noir.svg" alt="icone ajouter"> J'ajoute un évènement</button> -->
+
+                    <button type="button" class="btn-outline-lg">
+                        <img src="assets/icones/icone-ajout-noir.svg" alt="icone ajouter"> J'ajoute un évènement
+                    </button>
+
+                </div>
+                <!-- <div class="col-12 col-lg-1">                
+                </div> -->
+            </div>
+        </div>
+
+
+    </header>
+    <!-- FIN HEADER ANNA -->
+
+    <!-- DEBUT POPUP PERSO ANNA : ceci est un composant Bootstrap => modal -->
+
+    <!-- ici, à voir le bouton qui déclanche mon pop up -->
+
+
+    <button type="button" class="btn-outline-lg" data-bs-toggle="modal" data-bs-target="#popup-perso-1979">
+        Voir l'évènement personnel
+    </button>
+
+    <!-- Configuration modale -->
+    <div class="modal fade" id="popup-perso-1979" tabindex="-1" aria-labelledby="exampleModalLongTitle"
+        aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <!-- <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5> -->
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- CONTENU DU POP UP -->
+                    <artcicle class="container-fluid">
+
+                        <!-- 1ERE TRANCHE - photo de cover -->
+                        <div class="row">
+                            <div class="col-xl-1">
+                                <!-- div vide -->
+                            </div>
+                            <div class="col-xl-10">
+                                <img class="img-fluid img-cover-event" src="assets/images/1979-perso-cover.jpg"
+                                    alt="Brigitte et Jules">
+                            </div>
+
+                            <div class="col-xl-1">
+                                <!-- div vide -->
+                            </div>
+                        </div>
+
+                        <!-- 2EME TRANCHE - 3 cards -->
+                        <div class="row article-header">
+                            <div class="col-12 col-md-1 col-xl-1">
+                                <!-- div vide -->
+                            </div>
+
+                            <div class="col-12 col-md-11 col-xl-7">
+                                <div class="row align-items-center">
+                                    <div class="col-2">
+                                        <div class="box-border-radius">
+                                            <img class="icon-100" src="assets/icones/icone-rencontre.svg"
+                                                alt="icon-red-love">
+                                        </div>
+                                    </div>
+                                    <div class="col-10 border-left-1979">
+                                        <h2>Ma rencontre avec Jules</h2>
+                                        <p class="date-event"><span class="number-small">19</span><span
+                                                class="number-big">79</span></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- ici, double-card avec pastilles - musique (audio) + auteur de l'évènement -->
+
+                            <div class="col-12 col-md-12 col-xl-3 container-double-card">
+                               <div class="double-card-column">
+                                    <div class="row music justify-content-center align-items-center">
+                                        <!-- card - 1ère partie - musique -->
+                                        <div class="col-2 col-md-2 col-xl-3">
+                                            <!-- AUDIO PLAYER -->
+                                            <!--Conteneur du lecteur audio-->
+                                            <div class="audio-content">
+                                                <!--La balise audio est indispensable. Indiquer le morceau qui doit est lu dans l'attribut src-->
+                                                <audio id="player"
+                                                    src="assets/audio/Les Rita Mitsouko - Le petit train .mp3"
+                                                    controls></audio>
+                                            </div>
+    
+                                            <!-- fin audio player -->
+                                            <a href="#">
+                                                <!-- balise audio à ajouter où ?? -->
+                                                <!-- ici, pour écouter le morceau il faut du JS -->
+                                                <img id="play" class="icone-player play"
+                                                    src="assets/icones/icone-audio-play-filet.svg" alt="icon audio play">
+                                                <img id="pause" class="icone-player pause"
+                                                    src="assets/icones/icone-audio-pause-filet.svg" alt="">
+                                            </a>
+    
+    
+    
+    
+                                        </div>
+                                        <div class="col-10 col-md-10 col-xl-9">
+                                            <p class="song-title">Le petit train</p>
+                                            <p class="brand-name">Les Rita Mitsouko</p>
+                                        </div>
+    
+                                    </div>
+    
+                                    <div class="row author justify-content-center align-items-center">
+                                        <!-- card - 2ème partie - émotion -->
+                                        <div class="col-2 col-md-2 col-xl-3">
+                                            <img src="assets/icones/emo-passion-select.svg" alt="icon-red-passion">
+                                        </div>
+                                        <div class="col-10 col-md-10 col-xl-9">
+                                            <p class="author-intro">Crée par</p>
+                                            <p class="author-name">Brigitte <!-- <br> -->
+                                                De Pampelune</p>
+                                        </div>
+                                    </div>
+                               </div>
+                            </div>
+
+                            <div class="col-12 col-md-12 col-xl-1">
+                                <!-- div vide -->
+                            </div>
+
+                        </div>
+
+                        <!-- 3EME TRANCHE -->
+                        <div class="row story">
+                            <div class="col-12 col-md-2">
+                                <!-- ceci est un div vide -->
+
+                            </div>
+
+                            <div class="col-12 col-md-6">
+                                <h5>Dans le train, de Grenoble à Paris</h5>
+                                <p class="p-story">
+                                    J’avais 21 ans et rentrais de Grenoble où je venais de passer mes vacances d’hiver
+                                    en faisant du ski pendant 10 jours. Un jeune homme est arrivé dans le wagon en
+                                    courant.
+                                    Il a essayé de ranger ses affaires sur l’étagère au-dessus de ma tête.
+                                    Plusieurs objets se sont mis à glisser, j’ai vu des fusains et un carnet de dessin
+                                    chuter.
+                                </p>
+                                <p class="p-story-2">
+                                    Le carnet s’est ouvert en arrivant au sol...
+                                    Je n’ai pas pu m’empêcher de le regarder, j’ai vu des paysages et des animaux,
+                                    peints en aquarelle. <br>
+                                    Le prochain objet, encore un carnet de dessin est tombé directement sur la tête de
+                                    la femme assise à côté.
+                                    La femme me semblait très énervée.
+                                    Cette fois-ci le carnet a dévoilé des dessins de nus dont le dernier a glissé enfin
+                                    du chignon de la dame, puis est atterri au sol.
+                                    J’ai dû me retenir pour ne pas en rire trop fort.
+                                </p>
+
+                                <p class="p-story-2">
+                                    Le jeune homme s’est assis juste en face en constatant que la scène m’a bien
+                                    amusée...
+                                    Il m’a ensuite abordée pour demander où je voyageais. <br>
+                                    Il m’a parlé de ses études dans le commerce international,
+                                    mais surtout des ateliers de dessin auxquels il participait depuis plusieurs années.
+                                    Il a fini par m’inviter à un de ces ateliers…
+                                </p>
+
+                            </div>
+
+                            <div class="col-12 col-md-4">
+
+                                <!-- ceci est un div vide -->
+
+                            </div>
+
+                        </div>
+
+                        <!-- 4EME TRANCHE -->
+                        <div class="container-img-event">
+                            <img src="assets/images/1979-perso-diapo1.jpg" alt="Brigitte jeune">
+                            <img src="assets/images/1979-perso-diapo2.jpg" alt="Bébé dans une poussette">
+                            <img src="assets/images/1979-perso-diapo3.jpg" alt="Un couple sous le parapluie">
+                            <img src="assets/images/1979-perso-diapo4.jpg" alt="Brigitte danse come une folle">
+
+                            <!-- <div class="preview">
+                                <img src="assets/icones/icone-audio-play-defaut.svg" alt="fleche retourner">
+                            </div> -->
+
+                            <!-- <div class="next">
+                                <img src="assets/icones/icone-audio-play-defaut.svg" alt="fleche-voir le suivant">
+                            </div> -->
+
+
+                        </div>
+
+                        <!-- FLECHE POUR REMONTER - ne fonctionne pas car le modal de Bootstrap le bloque => A VOIR AVEC LES DEV si on y tient -->
+                        <!-- <div class="back-to-top text-end">
+                            <a href="#">
+                                <img src="assets/icones/scroll-retour-haut.svg" alt="flèche de retour">
+                            </a>
+                        </div> -->
+
+                    </artcicle>
+                </div>
+                <div class="modal-footer">
+                    <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button> -->
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FIN POPUP PERSO ANNA -->
+
+    <!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum placeat ipsa impedit. Quo voluptates ullam dolorem explicabo maxime, ipsa, doloremque in culpa est, consequuntur quaerat odio blanditiis alias qui nulla.</p>
+    <p>Libero molestiae sint eligendi? Id tempora cumque fugit officia laboriosam iste error deleniti nesciunt, minima possimus fuga eveniet incidunt dolorem ad molestias ipsum iusto suscipit rem eos ullam aut doloremque?</p>
+    <p>Doloribus inventore tempora non, iure ex, ratione sequi optio magnam ut placeat, dolorem nostrum quisquam. Quo veniam cum in labore explicabo? Perferendis nisi nostrum voluptatibus dolorum in minima numquam voluptate.</p>
+    <p>Quae repudiandae cum itaque, reprehenderit iure quo expedita odit aliquam magni asperiores, autem molestiae libero commodi minima vero eligendi natus fugit! Consequuntur libero ipsam labore ratione rerum nostrum dolore dolorum.</p>
+    <p>Consequatur quia sint iure distinctio expedita quae cupiditate cum eum sit. Eum adipisci minima repellendus autem expedita, iste ratione sunt. Dolores esse ad sapiente recusandae eos, quaerat dolorem deserunt! Atque.</p>
+    <p>Aut ipsa quibusdam necessitatibus nulla distinctio odit culpa expedita, tempore omnis quidem, perspiciatis, autem impedit eum repellendus quisquam labore earum accusantium ex sed minima! Minima fuga ducimus cum et esse.</p>
+    <p>Velit perferendis eaque cum harum quas ex natus vero distinctio sit nisi quibusdam nemo ipsa voluptatum, voluptates excepturi. Quaerat, ea fugiat? Maiores, mollitia cupiditate? Laborum cumque quo veritatis dignissimos atque.</p>
+    <p>Laudantium cumque repellendus non, perferendis modi eos reprehenderit dicta impedit voluptates consequuntur voluptatibus. Non quis officia deleniti tenetur praesentium aut exercitationem ad corrupti mollitia in amet placeat, ex quia reiciendis!</p>
+    <p>Vero beatae dolores sit ipsum labore quam, ipsa eum amet, soluta incidunt rem, quia consequatur magnam ratione repellat enim eligendi? Recusandae error quam quaerat ad cupiditate dolorem distinctio animi atque?</p>
+    <p>Iure facilis maiores, distinctio laborum magni magnam. Laudantium atque porro doloribus quam earum rerum, unde cum illum, labore magni minima. Provident ipsam sint asperiores officia aspernatur. Unde perferendis nostrum dolores?</p>
+    <p>Quis numquam debitis beatae quod velit? Pariatur, officiis incidunt nemo nam quaerat distinctio reprehenderit fugiat numquam similique natus modi fuga quidem enim provident eius rerum harum dignissimos ex voluptates consectetur!</p>
+    <p>Natus delectus tenetur nostrum eaque in consequatur ratione. Animi explicabo voluptates deleniti, unde et, commodi est fugiat aliquid ut nobis ad recusandae? Rem nobis, totam explicabo cum aliquid beatae cumque!</p>
+    <p>Facilis consectetur provident voluptas est totam explicabo tempora assumenda incidunt accusantium fugit corporis consequuntur mollitia adipisci doloribus odit distinctio nulla sunt natus id perspiciatis consequatur, corrupti voluptatum quas fugiat? In?</p>
+    <p>Inventore alias eius possimus, saepe esse ipsa excepturi fugiat repudiandae hic ipsum in ducimus at enim quaerat molestiae voluptate itaque corrupti, dignissimos qui quod maiores minima nobis. Nihil, incidunt voluptatem!</p>
+    <p>Fugit suscipit enim aliquam consectetur exercitationem quod cum distinctio voluptas tempore, amet architecto debitis rem eos maxime! Dicta ut aspernatur quas, impedit adipisci animi, beatae autem similique quia eius cumque.</p>
+    <p>Iure, optio nam quos laudantium minus quod facere aut voluptatem tenetur voluptatibus saepe, odit itaque dolorem quis, pariatur dicta! Voluptatem, facere facilis ipsa sint consequatur eligendi quia adipisci voluptatibus libero!</p>
+    <p>Ratione error, fugiat quasi ullam molestias cum excepturi non distinctio perferendis iure dolorem incidunt, aperiam totam odit fuga, deserunt expedita labore laborum odio. Nam blanditiis itaque vitae. Quaerat, impedit rerum?</p>
+    <p>Necessitatibus illum molestiae nesciunt laudantium ex similique officiis eaque! Dignissimos inventore similique vero fugiat tempore doloremque explicabo exercitationem maiores maxime consectetur, tenetur dolor iusto voluptates sed nam? Dicta, ex ducimus.</p>
+    <p>Rerum harum ea animi, inventore sunt cumque nemo excepturi dolores possimus, laboriosam fugiat alias recusandae a iste itaque quisquam. Veniam, similique. Sequi pariatur tenetur eius ad numquam, est soluta. Magni?</p>
+    <p>Assumenda aliquam numquam, reiciendis blanditiis atque magni provident eligendi veritatis perspiciatis dolorum amet nihil aliquid sint molestias omnis nisi optio, ea architecto. Ut earum consequatur tempore, optio beatae soluta ratione!</p> -->
+
+
+    <script src="assets/java-script/audio.js"></script>
+    <script src="assets/java-script/bootstrap.js"></script>
+
+    <!-- <div class="back-to-top text-end">
+        <a href="#">
+            <img src="assets/icones/scroll-retour-haut.svg" alt="flèche de retour">
+        </a>
+    </div> -->
+</body>
+
+</html>

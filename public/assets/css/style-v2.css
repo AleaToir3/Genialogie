@@ -92,6 +92,7 @@ body{
     background-position: center;
     height: 100vh;
     margin:0;
+    
 }
 
 /* CODE INITIAL VICTOIRE
@@ -130,6 +131,8 @@ body{
 .navbar-expand-lg .bg-light{
     background-color: var(--ecru);
 }*/
+
+
 
 .navbar{
     width: 100vw;
