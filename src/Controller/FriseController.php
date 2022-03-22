@@ -39,7 +39,7 @@ class FriseController extends AbstractController
                 // $dateMax = new DateTime($dateMax);
                 // $dateMax = $dateMax->modify('+1 month');
 
-                $eventDate[$i]['evenH'] = $historyEvenRepository->findByDate($value->getDate());
+                $eventDate[$i]['evenHistorique'] = $historyEvenRepository->findByDate($value->getDate());
             }
         }
         // dd($eventDate);

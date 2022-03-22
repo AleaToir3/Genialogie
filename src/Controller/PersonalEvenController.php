@@ -80,3 +80,4 @@ class PersonalEvenController extends AbstractController
         return $this->redirectToRoute('Home', [], Response::HTTP_SEE_OTHER);
     }
 }
+

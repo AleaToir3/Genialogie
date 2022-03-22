@@ -7,7 +7,8 @@
             <!-- Event 1: Guerre de Corée -->
                                 {# {{ dump( even ) }} #}
             {% for even in evens %}
-                {% for persoEven in even.eventP %}            
+                {% for persoEven in even.eventP %}  
+                <a href=" {{ path('app_history_even_show',{ id: even.evenHistorique.id }) }} ">
                     <article class="card-event-nofocus ">
                         <section class="historic-event">
                             <div class="img-histo">
@@ -15,10 +16,11 @@
                             </div>
                             <div class="tag">
                                 <div class="title">
-                                    <p class="event-title-1">{{ even.evenH.title }}</p>
+                                    <p class="event-title-1">{{ even.evenHistorique.title }}</p>
                                 </div>
                             </div>
                         </section>
+                </a>
 
                         <img src="assets/icones/ligne-dates.svg" class="ligne-dots" alt="ligne">
 
@@ -31,6 +33,7 @@
 
                         <img src="assets/icones/ligne-dates.svg" class="ligne-dots" alt="ligne">
                         
+                    <a href=" {{ path('app_personal_even_show',{ id: persoEven.id }) }} ">
                         <section class="personal-event">
                             <div class="tag">
                                 <div class="title">
@@ -44,6 +47,7 @@
                                 </div>
                             </div>
                         </section>
+                    </a>
                     </article>
                 {% endfor %}
             {% endfor %}
