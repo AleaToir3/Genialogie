@@ -1,41 +1,138 @@
 {% extends 'base.html.twig' %}
 
+
+
+
+
 {% block title %}Accueil {{parent()}} {% endblock %}
 
 {% block body %}
+{# {{ dump(evens) }} #}
 
     {% for even in evens %}
-       {# {{even.date}}  #}
+    {# {{ even.evenH.date | date('Y') }} #}
         <h1>Perso Even</h1>
             {% for persoEven in even.eventP %} 
-                <div class="personal">
-                    <h2>Titre :</h2> 
-                    <p>{{ persoEven.title }}</p>
-
-                    <h2> Description :</h2> 
-                    {{ persoEven.description }}
-
-                    <h2> Date :</h2>
-                    {{ persoEven.date | date('Y') }}
+    <article class="card-event-nofocus">
+            <section class="historic-event">
+                <div class="img-histo">
+                    <img src="assets/images/2000-historic-event-small.png" alt="bug-2000">
                 </div>
-                <hr>    
-            {% endfor %}
-
-        <h1>Historic Even</h1>
-            {% for histoEven in even.evenH %} 
-                <div class="historic">
-                    <h2>Titre :</h2> 
-                    <p>{{ histoEven.title }}</p>
-
-                    <h2> Description :</h2> 
-                    {{ histoEven.description }}
-
-                    <h2> Date :</h2>
-                    {{ histoEven.date | date('Y') }}
+                <div class="tag">
+                    <div class="title">
+                        <p>{{ even.evenH.title }}</p>
+                    </div>
                 </div>
-                <hr>    
-            {% endfor %}
+            </section>
 
+            <img src="assets/icones/ligne-dates.svg" class="ligne-dots" alt="ligne">
+
+            <section class="date">
+                <p>
+                    <span class="century">{{ even.date | slice(0,2) }}
+</span>
+                    <span class="decade">{{ even.date | slice(2,4) }}</span>
+                </p>
+            </section>
+
+            <img src="assets/icones/ligne-dates.svg" class="ligne-dots" alt="ligne">
+
+            <section class="personal-event">
+                <div class="tag">
+                    <div class="title">
+                        <p>{{ persoEven.title }}</p>
+                    </div>
+                </div>
+
+                <div class="personal-picture">
+                    <img src="" alt="pas-de-photo">
+                    <div>
+                        <p>pas d'emotion</p>
+                    </div>
+                </div>
+            </section>
+            {% endfor %}
+  
     {% endfor %}
 
-{% endblock %}
+
+
+
+  
+    <!--3 MAIN-->
+    <main>
+     <!--Main la frise id=""-->
+
+
+        <!-- 3.B div avec un id= frise pastille-->
+
+        <div class="timeline-dot">
+            <article class="year-scroll d-flex flex-row flex-nowrap justify-content-around">
+                <button type="button" id="year-1950"
+                    class="btn-year d-flex flex-column justify-content-center align-items-center">
+                    <div class="year-small">19</div>
+                    <div class="year-big">50</div>
+                </button>
+    
+                <img src="./assets/icones/filet-frise-decennies.svg">
+    
+                <button type="button" id="year-1960"
+                    class="btn-year d-flex flex-column justify-content-center align-items-center">
+                    <div class="year-small">19</div>
+                    <div class="year-big">60</div>
+                </button>
+    
+                <img src="./assets/icones/filet-frise-decennies.svg">
+    
+                <button type="button" id="year-1970"
+                    class="btn-year d-flex flex-column justify-content-center align-items-center">
+                    <div class="year-small">19</div>
+                    <div class="year-big">70</div>
+                </button>
+    
+                <img src="./assets/icones/filet-frise-decennies.svg">
+    
+                <button type="button" id="year-1980"
+                    class="btn-year d-flex flex-column justify-content-center align-items-center">
+                    <div class="year-small">19</div>
+                    <div class="year-big">80</div>
+                </button>
+    
+                <img src="./assets/icones/filet-frise-decennies.svg">
+    
+                <button type="button" id="year-1990"
+                    class="btn-year d-flex flex-column justify-content-center align-items-center">
+                    <div class="year-small">19</div>
+                    <div class="year-big">90</div>
+                </button>
+    
+                <img src="./assets/icones/filet-frise-decennies.svg">
+    
+                <button type="button" id="year-2000"
+                    class="btn-year d-flex flex-column justify-content-center align-items-center">
+                    <div class="year-small">20</div>
+                    <div class="year-big">00</div>
+                </button>
+    
+                <img src="./assets/icones/filet-frise-decennies.svg">
+    
+                <button type="button" id="year-2010"
+                    class="btn-year d-flex flex-column justify-content-center align-items-center">
+                    <div class="year-small">20</div>
+                    <div class="year-big">10</div>
+                </button>
+    
+                <img src="./assets/icones/filet-frise-decennies.svg">
+    
+                <button type="button" id="year-2020"
+                    class="btn-year d-flex flex-column justify-content-center align-items-center">
+                    <div class="year-small">20</div>
+                    <div class="year-big">20</div>
+                </button>
+            </article>
+        </div>
+
+         <!-- FIN 3.B div avec un id= frise pastille-->
+
+    </main>
+    {% endblock %}

@@ -5,15 +5,21 @@
         <title>{% block title %}Genialogie{% endblock %}</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
         {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
+        <link rel="stylesheet" href="assets/css/style-v2.css">
         {% block stylesheets %}
-            {{ encore_entry_link_tags('app') }}
+            {{ encore_entry_link_tags('app/') }}
         {% endblock %}
 
-        {% block javascripts %}
+        {% block  javascripts %}
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
     </head>
     <body>
+
+
+
+
+
 
      <!-- DEBUT NAVBAR -->
         <div class="container-fluid navbar">
@@ -32,6 +38,9 @@
         </div>
      <!-- FIN NAVBAR -->
 
+{% if is_granted('ROLE_USER') %}
+    <h1>T CONNNCTER BOUUUU</h1>
+{% endif %}
 
     <!-- DEBUT HEADER -->
         <header>
@@ -60,6 +69,6 @@
         
         {% endblock body %}
         <hr>
-        <h1>footer</h1>
+        <h6>footer</h6>
     </body>
 </html>

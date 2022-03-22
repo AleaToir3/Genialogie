@@ -45,8 +45,8 @@ class FriseController extends AbstractController
         // dd($eventDate);
         return $this->render('frise/index.html.twig', [
             // 'personal_evens' => $personalEvenRepository->findAll(),
-            // 'history_evens' => $historyEvenRepository->orderByDate($date)
-            'evens' => $eventDate,
+            // 'history_evens' => $historyEvenRepository->orderByDate('date'),
+            'evens' => $eventDate
         ]);
     }
 }
