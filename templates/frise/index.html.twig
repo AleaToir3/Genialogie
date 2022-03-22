@@ -5,12 +5,13 @@
 {% block body %}
     <div class="bloc-scroll">
             <!-- Event 1: Guerre de Corée -->
+                                {# {{ dump( even ) }} #}
             {% for even in evens %}
                 {% for persoEven in even.eventP %}            
                     <article class="card-event-nofocus ">
                         <section class="historic-event">
                             <div class="img-histo">
-                                <img src="assets/images/1950-historic-event-small.png" alt="guerre-corée">
+                                <img src="{{ asset('assets/icones/') }}/1950-historic-event-small.png" alt="guerre-corée">
                             </div>
                             <div class="tag">
                                 <div class="title">

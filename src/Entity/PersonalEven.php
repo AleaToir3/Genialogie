@@ -54,6 +54,11 @@ class PersonalEven
      */
     private $media;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $legend;
+
     public function __construct()
     {
         $this->emotione = new ArrayCollection();
@@ -182,6 +187,18 @@ class PersonalEven
                 $medium->setPersonalEven(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getLegend(): ?string
+    {
+        return $this->legend;
+    }
+
+    public function setLegend(string $legend): self
+    {
+        $this->legend = $legend;
 
         return $this;
     }

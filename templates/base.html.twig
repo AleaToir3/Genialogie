@@ -31,7 +31,7 @@
 <body>
      <!-- DEBUT NAVBAR -->
 <div class="container-fluid navbar">
-    <a href=" {{ path('Home') }}" class="logo-accueil"><img src="{{ asset('assets/icones/logo-orange.svg') }}" alt="logo"></a>
+    <a href=" {{ path('Home') }}" class="logo-accueil"><img src="{{ asset('assets/icones/') }}logo-orange.svg" alt="logo"></a>
 
     <nav class="container navbar-menu d-flex flex-nowrap justify-content-center">
         <ul class="container d-flex justify-content-between">
@@ -44,7 +44,7 @@
         </ul>
     </nav>
 
-    <a href="{{ path('app_logout') }}" class="icone-deconnexion"><img src="{{asset('/assets/icones/icone-deconnexion-gris.svg') }}" alt="logo"></a>
+    <a href="{{ path('app_logout') }}" class="icone-deconnexion"><img src="{{ asset('assets/icones/') }}icone-deconnexion-gris.svg" alt="logo"></a>
 </div>
 
     <!-- DEBUT HEADER -->
@@ -53,14 +53,17 @@
             <div class="d-flex flex-row align-items-center container-header">
                
                 <div class="col-12 col-md-9 texte-welcome">
-                    <p>Bienvenue {{ app.user.firstname }}</p>
+                
+                    <p>Bienvenue {% if app.user %}
+                     {{ app.user.firstname }}</p>
+                    {% endif %}
                     <h1>Votre Genialo’Frise</h1>
                 </div>
                
                 <div class="col-12 col-md-3">
                 <a href="{{ path('app_personal_even_new') }}"> 
                     <button type="button" class="btn-outline-lg-ajout">
-                        <img src="assets/icones/icone-ajout-noir.svg" alt="icone ajouter"> J'ajoute un évènement
+                        <img src="{{ asset('assets/icones/') }}icone-ajout-noir.svg" alt="icone ajouter"> J'ajoute un évènement
                     </button>
                 </a>
                 </div>
@@ -85,56 +88,56 @@
                     <div class="year-big">50</div>
                 </button>
     
-                <img src="./assets/icones/filet-frise-decennies.svg">
-    
+                   <img src="{{ asset('assets/icones/') }}filet-frise-decennies.svg">
+   
                 <button type="button" id="year-1960"
                     class="btn-year d-flex flex-column justify-content-center align-items-center">
                     <div class="year-small">19</div>
                     <div class="year-big">60</div>
                 </button>
     
-                <img src="./assets/icones/filet-frise-decennies.svg">
-    
+                   <img src="{{ asset('assets/icones/') }}filet-frise-decennies.svg">
+   
                 <button type="button" id="year-1970"
                     class="btn-year d-flex flex-column justify-content-center align-items-center">
                     <div class="year-small">19</div>
                     <div class="year-big">70</div>
                 </button>
     
-                <img src="./assets/icones/filet-frise-decennies.svg">
-    
+                   <img src="{{ asset('assets/icones/') }}filet-frise-decennies.svg">
+   
                 <button type="button" id="year-1980"
                     class="btn-year d-flex flex-column justify-content-center align-items-center">
                     <div class="year-small">19</div>
                     <div class="year-big">80</div>
                 </button>
     
-                <img src="./assets/icones/filet-frise-decennies.svg">
-    
+                   <img src="{{ asset('assets/icones/') }}filet-frise-decennies.svg">
+   
                 <button type="button" id="year-1990"
                     class="btn-year d-flex flex-column justify-content-center align-items-center">
                     <div class="year-small">19</div>
                     <div class="year-big">90</div>
                 </button>
     
-                <img src="./assets/icones/filet-frise-decennies.svg">
-    
+                   <img src="{{ asset('assets/icones/') }}filet-frise-decennies.svg">
+   
                 <button type="button" id="year-2000"
                     class="btn-year d-flex flex-column justify-content-center align-items-center">
                     <div class="year-small">20</div>
                     <div class="year-big">00</div>
                 </button>
     
-                <img src="./assets/icones/filet-frise-decennies.svg">
-    
+                   <img src="{{ asset('assets/icones/') }}filet-frise-decennies.svg">
+   
                 <button type="button" id="year-2010"
                     class="btn-year d-flex flex-column justify-content-center align-items-center">
                     <div class="year-small">20</div>
                     <div class="year-big">10</div>
                 </button>
     
-                <img src="./assets/icones/filet-frise-decennies.svg">
-    
+                <img src="{{ asset('assets/icones/') }}filet-frise-decennies.svg">
+   
                 <button type="button" id="year-2020"
                     class="btn-year d-flex flex-column justify-content-center align-items-center">
                     <div class="year-small">20</div>

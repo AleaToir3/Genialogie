@@ -10,6 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Picture
 {
+  
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -26,6 +27,17 @@ class Picture
      * @ORM\ManyToOne(targetEntity=Media::class, inversedBy="picture")
      */
     private $media;
+
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $wallpaper ;
+
+    
+    function __construct( ) 
+    { 
+            $this->wallpaper = false;
+    }
 
     public function getId(): ?int
     {
@@ -55,4 +67,17 @@ class Picture
 
         return $this;
     }
+
+    public function getWallpaper(): ?bool
+    {
+        return $this->wallpaper;
+    }
+
+    public function setWallpaper(bool $wallpaper): self
+    {
+        $this->wallpaper = $wallpaper;
+
+        return $this;
+    }
+
 }

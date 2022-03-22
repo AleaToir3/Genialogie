@@ -6,6 +6,7 @@ use App\Entity\PersonalEven;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 
 class PersonalEvenType extends AbstractType
 {
@@ -14,8 +15,13 @@ class PersonalEvenType extends AbstractType
         $builder
             ->add('title')
             ->add('description')
-            ->add('date')
             ->add('isPrivatee')
+            ->add('legend')
+            ->add('date',DateType::class,[
+                'widget' => 'single_text'
+            ])
+
+            
         ;
     }
 
