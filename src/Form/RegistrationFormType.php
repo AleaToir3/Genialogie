@@ -9,8 +9,8 @@ use Symfony\Component\Validator\Constraints\IsTrue;
 use Symfony\Component\Validator\Constraints\Length;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
-use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 
 class RegistrationFormType extends AbstractType
@@ -21,10 +21,7 @@ class RegistrationFormType extends AbstractType
         ->add('email')
         ->add('firstname')
         ->add('name')
-        ->add('birthday',DateTimeType::class, [
-
-            'days' => range(1,31),
-            'years' => range(date('Y'), date('Y')-125),
+        ->add('birthday',DateType::class,[
             'widget' => 'single_text'
         ])
 

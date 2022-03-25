@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}	{{ parent() }}historique {% endblock title %}
+{% block title %}	{{ parent() }} | historique {% endblock title %}
 
 {% block stylesheets %}
 	<link rel="stylesheet" href="{{ asset ('assets/css/bootstrap.css') }}">
@@ -12,10 +12,13 @@
 
     <div id="popup-perso-1979">
         <artcicle class="container-fluid">
-
+    
             <!-- 1ERE TRANCHE - photo de cover -->
             <div class="row container-cover">
                 <div class="col-xl-1 col-xxl-2">
+            <div class="header-right container d-flex justify-content-start">
+                <span class="icone-fermer"><a href="{{ path ('Home') }}" ><img src="{{ asset ('assets/icones/') }}icone-fermer-noir.svg"  alt="Close"></a></span>
+            </div>
                     <!-- div vide -->
                 </div>
                 <div class="col-xl-10 col-xxl-8">
@@ -122,39 +125,6 @@
             </div>
             
             
-
-        </artcicle>
-    </div>
-
-    <!-- 4EME bouton-->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	{% for user in  app.user.roles %}
 		{% if user == "ROLE_ADMIN" %}
 			<a href="{{ path('app_history_even_edit', {'id': history_even.id}) }}">Editer</a>
@@ -164,6 +134,11 @@
 
 	{# POUR LE FUTUR            #}
 	<a href="{{ path('Home') }}">Retour a la list</a>
+
+        </artcicle>
+    </div>
+
+    <!-- 4EME bouton-->
 
 
 {% endblock body %}

@@ -6,6 +6,7 @@ use App\Entity\HistoryEven;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 
 class HistoryEvenType extends AbstractType
 {
@@ -17,7 +18,9 @@ class HistoryEvenType extends AbstractType
             ->add('photo')
             ->add('video')
             ->add('music')
-            ->add('date' )
+            ->add('date',DateType::class,[
+                'widget' => 'single_text'
+            ])
         ;
     }
 

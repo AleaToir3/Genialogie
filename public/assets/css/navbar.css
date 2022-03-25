@@ -54,13 +54,13 @@
 
 
 body{
-    background-image: url(../images/background\ desktop\ 1920x1140px.png);
-    background-color: var(--ecru);
+    /* background-image: url(../images/background\ desktop\ 1920x1140px.png); */
+     background-color: var(--ecru);
     background-position: center;
     height: 100vh;
     margin:0;
     position: relative;
-}
+} 
 
 /* Nav BAR */
 
