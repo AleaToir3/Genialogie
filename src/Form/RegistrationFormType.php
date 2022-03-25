@@ -22,34 +22,33 @@ class RegistrationFormType extends AbstractType
         ->add('firstname')
         ->add('name')
         ->add('birthday',DateTimeType::class, [
+
             'days' => range(1,31),
             'years' => range(date('Y'), date('Y')-125),
+            'widget' => 'single_text'
         ])
 
-      
+
         
 
         ->add('agreeTerms', CheckboxType::class, [
                 'mapped' => false,
                 'constraints' => [
                     new IsTrue([
-                        'message' => 'You should agree to our terms.',
+                        'message' => 'Merci d\'accepter les conditions générale.',
                     ]),
                 ],
             ])
-            ->add('plainPassword', PasswordType::class, [
-                // instead of being set onto the object directly,
-                // this is read and encoded in the controller
+            ->add('plainPassword', PasswordType::class, [             
                 'mapped' => false,
                 'attr' => ['autocomplete' => 'new-password'],
                 'constraints' => [
                     new NotBlank([
-                        'message' => 'Please enter a password',
+                        'message' => 'Veuillez entre un mot de pass',
                     ]),
                     new Length([
                         'min' => 6,
-                        'minMessage' => 'Your password should be at least {{ limit }} characters',
-                        // max length allowed by Symfony for security reasons
+                        'minMessage' => 'doit contenir un min de  {{ limit }} characteres',
                         'max' => 25,
                     ]),
                 ],

@@ -4,20 +4,28 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Eczar:wght@500;600&display=swap" rel="stylesheet">
-
-
-    <title>{% block title %}Genialogie{% endblock %}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Eczar:wght@500;600&display=swap" rel="stylesheet">    
     <!--lien bootstrap-->
-     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    
-    <link rel="stylesheet" href="assets/css/style-v2.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> 
+
+    <title>{% block title %}Genialogie{% endblock %}</title>   
+    
+    <link rel="stylesheet" href="{{ asset ('assets/css/bootstrap.css' )}}" type="text/css">   
+     {% block stylesheets %}      
+    <link rel="stylesheet" href="{{ asset ('assets/css/style-base.css' )}}" type="text/css">   
+    <link rel="stylesheet" href="{{ asset ('assets/css/style-FS.3.3.1-pop-up-evenement' )}}" type="text/css">  
+    {% endblock  %} 
+
+
+    <!--lien bootstrap-->
+     
 </head>
 
-<!--Sommaire
+<!--Sommaire<
     1 NAVBAR
     2 HEADER
     3 MAIN
@@ -29,6 +37,8 @@
 
 -->
 <body>
+
+{% if app.user %}
      <!-- DEBUT NAVBAR -->
 <div class="container-fluid navbar">
     <a href=" {{ path('Home') }}" class="logo-accueil"><img src="{{ asset('assets/icones/') }}logo-orange.svg" alt="logo"></a>
@@ -46,40 +56,16 @@
 
     <a href="{{ path('app_logout') }}" class="icone-deconnexion"><img src="{{ asset('assets/icones/') }}icone-deconnexion-gris.svg" alt="logo"></a>
 </div>
-
-    <!-- DEBUT HEADER -->
-    <header>
-        <div class="container">
-            <div class="d-flex flex-row align-items-center container-header">
-               
-                <div class="col-12 col-md-9 texte-welcome">
-                
-                    <p>Bienvenue {% if app.user %}
-                     {{ app.user.firstname }}</p>
-                    {% endif %}
-                    <h1>Votre Genialo’Frise</h1>
-                </div>
-               
-                <div class="col-12 col-md-3">
-                <a href="{{ path('app_personal_even_new') }}"> 
-                    <button type="button" class="btn-outline-lg-ajout">
-                        <img src="{{ asset('assets/icones/') }}icone-ajout-noir.svg" alt="icone ajouter"> J'ajoute un évènement
-                    </button>
-                </a>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- FIN HEADER -->
-   
+{% endif %}
     <!--3 MAIN-->
-    <main>
+    {# <main> #}
      <!--Main la frise id=""-->
+     
 
         {% block body %}
-        {% endblock body %}
+        {% endblock %}
         <!-- 3.B div avec un id= frise pastille-->
-
+{# 
         <div class="timeline-dot">
             <article class="year-scroll d-flex flex-row flex-nowrap justify-content-around">
                 <button type="button" id="year-1950"
@@ -144,11 +130,11 @@
                     <div class="year-big">20</div>
                 </button>
             </article>
-        </div>
+        </div> #}
 
          <!-- FIN 3.B div avec un id= frise pastille-->
 
-    </main>
+    {# </main> #}
 
 
     <!--4 FOOTER-->

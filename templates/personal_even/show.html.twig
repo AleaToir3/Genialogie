@@ -1,43 +1,168 @@
- {% extends 'base.html.twig' %}
+{% extends 'base.html.twig' %}
 
-{% block title %}HistoryEven{% endblock %}
+{% block title %}
+	{{ parent() }}
+	Personnel
+{% endblock title %}
+
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset ('assets/css/bootstrap.css') }}">
+	<link rel="stylesheet" href="{{ asset ('assets/css/style-FS.3.3.1-pop-up-evenement.css') }}">
+{% endblock stylesheets %}
+
 
 {% block body %}
-    <h1>personal_even</h1>
 
-    <table class="table">
-        <tbody>
-          
-            <tr>
-                <th>Title</th>
-                <td>{{ personal_even.title }}</td>
-            </tr>
-            <tr>
-                <th>Description</th>
-                <td>{{ personal_even.description }}</td>
-            </tr>
-            <tr>
-                <th>Photo</th>
-                {# <td>{{ }}</td>
-            </tr> #}
-            <tr>
-                <th>Video</th>
-                {# <td>{{  }}</td> #}
-            </tr>
-            <tr>
-                <th>Music</th>
-                {# <td>{{ }}</td> #}
-            </tr>
-            <tr>
-                <th>Date</th>
-                <td>{{ personal_even.date ? personal_even.date|date('Y-m-d H:i:s') : '' }}</td> 
-            </tr>
-        </tbody>
-    </table>
- 
-    <a href="{{ path('Home') }}">back to list</a>
+	{# {{ dump(personal_even) }} #}
 
-    <a href="{{ path('app_personal_even_edit', {'id': personal_even.id}) }}">edit</a>
+	<!-- icone fermer -->
+		<div class="close"> <a href="{{ path ('Home') }}">
+			<img src="{{ asset ('assets/icones/') }}icone-fermer-noir.svg" alt="fermer">
+		</a>
+	</div>
+	<!-- icone fermer -->
+	<div id="popup-perso-1979">
+		<artcicle
+			class="container-fluid">
 
-    {{ include('personal_even/_delete_form.html.twig') }} 
-{% endblock %}
+			<!-- 1ERE TRANCHE - photo de cover -->
+			<div class="row container-cover">
+				<div
+					class="col-xl-1 col-xxl-2"><!-- div vide -->
+				</div>
+				<div
+					class="col-xl-10 col-xxl-8">
+					{# <img class="img-fluid img-cover-event" src="{{ asset ('/assets/icones/') }}1979-perso-cover.jpg" #}
+					<img class="img-fluid img-cover-event" src="{{ asset ('/assets/images/') }}1979-perso-cover.jpg" alt="">
+				</div>
+
+				<div
+					class="col-xl-1 col-xxl-2"><!-- div vide -->
+				</div>
+			</div>
+
+			<!-- 2EME TRANCHE - 3 cards -->
+			<div class="row article-header">
+				<div
+					class="col-12 col-md-1 col-xl-1 col-xxl-2"><!-- div vide -->
+				</div>
+
+				<div class="col-12 col-md-11 col-xl-7 col-xxl-5">
+					<div class="row align-items-center title-and-icon">
+						<div class="col-2">
+							<div class="box-border-radius">
+								<img class="icon-100" src="{{ asset ('/assets/icones/') }}icone-rencontre.svg" alt="icon-red-love">
+							</div>
+						</div>
+						<div class="col-10 border-left-1979">
+							<h2>{{ personal_even.title }}</h2>
+							<p class="date-event">
+								<span class="number-small">{{  personal_even.date|date('Y') |slice(0,2)  }}</span>
+								<span class="number-big">{{  personal_even.date|date('Y') |slice(2,4)  }}</span>
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- ici, double-card avec pastilles - musique (audio) + auteur de l'évènement -->
+				<div class="col-12 col-md-12 col-xl-3 col-xxl-3 container-double-card">
+					<div class="double-card-column">
+						<div
+							class="row music justify-content-center align-items-center">
+							<!-- card - 1ère partie - musique -->
+							<div class="col-2 col-md-2 col-xl-3 col-xxl-2">
+								<!-- AUDIO PLAYER -->
+								<!--Conteneur du lecteur audio-->
+									<div
+									class="audio-content"> <!--La balise audio est indispensable. Indiquer le morceau qui doit est lu dans l'attribut src-->
+									<audio id="player" src="{{ asset ('/assets/audio/') }}Les Rita Mitsouko - Le petit train .mp3" controls></audio>
+								</div>
+
+								<!-- fin audio player -->
+								<a href="#">
+									<!-- balise audio à ajouter où ?? -->
+									<!-- ici, pour écouter le morceau il faut du JS -->
+									<img id="play" class="icone-player play" src="{{ asset ('/assets/icones/') }}icone-audio-play-filet.svg" alt="icon audio play"> <img id="pause" class="icone-player pause" src="{{ asset ('/assets/icones/') }}icone-audio-pause-filet.svg" alt="">
+								</a>
+
+
+							</div>
+							<div class="col-10 col-md-10 col-xl-9 col-xxl-10">
+								<p class="song-title">Le petit train</p>
+								<p class="brand-name">Les Rita Mitsouko</p>
+							</div>
+
+						</div>
+
+						<div
+							class="row author justify-content-center align-items-center">
+							<!-- card - 2ème partie - émotion -->
+							<div class="col-2 col-md-2 col-xl-3 col-xxl-2">
+								<img src="{{ asset ('/assets/icones/') }}emo-passion-select.svg" alt="icon-red-passion">
+							</div>
+							<div class="col-10 col-md-10 col-xl-9 col-xxl-10">
+								<p class="author-intro">Crée par</p>
+								<p class="author-name">Brigitte
+									<!-- <br> -->
+									De Pampelune</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div
+					class="col-12 col-md-12 col-xl-1 col-xxl-2"><!-- div vide -->
+				</div>
+
+			</div>
+
+			<div class="swipe">
+				<img src="{{ asset ('/assets/icones/') }}icone-chevron-droite.svg" alt="vers page historique">
+			</div>
+
+			<!-- 3EME TRANCHE -->
+			<div class="row story">
+				<div
+					class="col-12 col-md-2"><!-- ceci est un div vide -->
+
+				</div>
+
+				<div class="col-12 col-md-6">
+					<h5>
+						{{  personal_even.title }}
+					</h5>
+					<p class="p-story">
+						{{  personal_even.description }}
+					</p>
+				</div>
+
+				<div
+					class="col-12 col-md-4"><!-- ceci est un div vide -->
+
+				</div>
+
+			</div>
+
+			<!-- 4EME TRANCHE -->
+			<div class="container-img-event">
+				<img src="{{ asset ('assets/images/') }}1979-perso-diapo1.jpg" alt="Brigitte jeune">
+				<img src="{{ asset ('/assets/images/') }}1979-perso-diapo2.jpg" alt="Bébé dans une poussette">
+				<img src="{{ asset ('/assets/images/') }}1979-perso-diapo3.jpg" alt="Un couple sous le parapluie">
+				<img src="{{ asset ('/assets/images/') }}1979-perso-diapo4.jpg" alt="Brigitte danse come une folle">
+
+
+			</div>
+
+
+			{% for user in  app.user.roles %}
+				{% if user == "ROLE_ADMIN" %}
+					<a href="{{ path('app_personal_even_edit', {'id': personal_even.id}) }}">Editer</a>
+					{{ include('personal_even/_delete_form.html.twig') }}
+				{% endif %}
+			{% endfor %}
+
+			{# POUR LE FUTUR            #}
+			<a href="{{ path('Home') }}">Retour a la list</a>
+
+
+		{% endblock body %}

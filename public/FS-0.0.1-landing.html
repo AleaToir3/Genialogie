@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Eczar:wght@500;600&display=swap" rel="stylesheet">
+    
+    
+    <!--lien bootstrap-->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <title>Landing page</title>
+<!-- Lien fichier CSS à ajouter -->
+
+    <link rel="stylesheet" href="assets/css/style-landing.css">
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+</head>
+<body>
+
+<div class="container-fluid d-flex flex-row flex-nowrap align-items-center">
+<!-- Bloc diaporama -->
+    <article class="container bloc-diapo">
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4" aria-label="Slide 5"></button>
+              <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5" aria-label="Slide 1"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="{{assset ('assets/images/)}}1970-histo.png" class="d-block w-100" alt="moments inoubliables">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Des moments inoubliables...</h5>
+                  <p>A raconter, développer et personnaliser à travers vos mots, vos émotions. Un outil original de transmission et de communication entre les proches et entre générations. </p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="assets/images/2010-histo.png" class="d-block w-100" alt="partage">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Partagez...</h5>
+                  <p>Votre frise en invitant vos proches grâce à des invitations personnelles. Vos contributeurs pourront à leur tour, ajouter des évènements pour alimenter votre frise. </p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="assets/images/2020-histo.png" class="d-block w-100" alt="sécurisé">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Un compte sécurisé...</h5>
+                  <p>Et confidentiel qui vous permet de gérer individuellement vos accès et données. Notre plateforme n'utilise aucune donnée à des fins commerciales. </p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="assets/images/1990-histo.png" class="d-block w-100" alt="simple">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Une plateforme simple...</h5>
+                  <p>Et surtout, facile à utiliser. Parce-que nous savons que vous souhaitez passer plus de temps à décrire vos moments qu'à chercher le bouton de publication, Genialogy a été developpé pour toutes les générations ! </p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="assets/images/2001-histo.png" class="d-block w-100" alt="ludique">
+                <div class="carousel-caption d-none d-md-block">
+                  <h5>Un outil ludique et convivial...</h5>
+                  <p>Qui réunit tous les proches autour de l'Histoire avec un grand H. De 7 à 77 ans, Genialogy sera votre meilleur allié pour transmettre votre héritage, Votre Histoire. </p>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+    </article>
+<!-- bloc connexion -->
+    <article class="container bloc-connect d-flex flex-column align-items-center">
+        <img src="assets/icones/logo-orange.svg" alt="logo" class="logo">
+        <span class="container bloc-title d-flex flex-column flex-wrap align-items-start justify-content-between">
+            <h1>Bienvenue sur Genialogy</h1>
+  
+            <h3 class="d-flex flex-row flex-wrap">Racontez l'Histoire de votre famille</h3>
+        </span>
+
+        <div class="bloc-txt">
+        <p>Transformez votre arbre généalogique en une <span class="txt-bold">frise chronologique riche et visuelle de votre histoire familiale</span> et partagez-la en toute sécurité avec toute votre famille.</p>
+        <br>
+        <p>Genialogy a été conçu pour <span class="txt-bold">faciliter le partage et l'exploration</span> de votre histoire familiale avec le reste de votre famille, notamment les jeunes générations.</p>
+        <br>
+        <p>En parallèle de votre histoire familiale découvrez les évènements que Genialogy vous présente. Une méthode ludique pour <span class="txt-bold">apprendre le contexte historique</span> liés vos évènements familiaux.</p>
+        </div>
+
+        <div class="container bloc-cta d-flex flex-row justify-content-around">
+            <button type="button" class="btn-cta-full-connect">CONNEXION</button>
+            <button type="button" class="btn-cta-full-subscribe">INSCRIPTION</button>
+        </div>
+        <div class="container bloc-socials d-flex flex-row justify-content-start">
+            <p>Suivez-nous sur les réseaux sociaux:</p>
+            <span class="socials">
+                <a href="#"><img src="assets/icones/facebook.svg"></a>
+                <a href="#"><img src="assets/icones/instagram.svg"></a>
+            </span>
+        </div>
+    </article>
+</div>
+
+<!-- Lien javascript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<svg width="390" height="844" viewBox="0 0 390 844" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="127" y="844" width="844" height="66" transform="rotate(-90 127 844)" fill="#A1B7C0"/>
+<rect x="193" y="844" width="844" height="70" transform="rotate(-90 193 844)" fill="#849994"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M144 484.636C143.932 484.636 143.864 484.636 143.796 484.636C94.2032 484.636 54 433.454 54 370.318C54 307.182 94.2032 256 143.796 256C143.864 256 143.932 256 144 256L144 484.636Z" fill="#A1B7C0"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M243 484.012C243.068 484.012 243.136 484.012 243.204 484.012C292.797 484.012 333 432.746 333 369.506C333 306.266 292.797 255 243.204 255C243.136 255 243.068 255 243 255L243 484.012Z" fill="#849994"/>
+<line x1="389.5" y1="254.5" x2="263.5" y2="254.5" stroke="#363636" stroke-linecap="round" stroke-dasharray="2 4 6 8"/>
+<line x1="131.5" y1="255.5" x2="5.5" y2="255.5" stroke="#363636" stroke-linecap="round" stroke-dasharray="2 4 6 8"/>
+<line x1="260.5" y1="255.5" x2="134.5" y2="255.5" stroke="#F4F3EF" stroke-linecap="round" stroke-dasharray="2 4 6 8"/>
+<line x1="389.5" y1="484.5" x2="263.5" y2="484.5" stroke="#363636" stroke-linecap="round" stroke-dasharray="2 4 6 8"/>
+<line x1="126.5" y1="484.5" x2="0.5" y2="484.5" stroke="#363636" stroke-linecap="round" stroke-dasharray="2 4 6 8"/>
+<line x1="260.5" y1="484.5" x2="134.5" y2="484.5" stroke="#F4F3EF" stroke-linecap="round" stroke-dasharray="2 4 6 8"/>
+</svg>

@@ -8,6 +8,7 @@ use DateTime;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\Validator\Constraints\Length;
 
 class FriseController extends AbstractController
 {
@@ -16,6 +17,11 @@ class FriseController extends AbstractController
      */
     public function index(PersonalEvenRepository $personalEvenRepository,HistoryEvenRepository $historyEvenRepository): Response
     {
+        if( !$this->getUser()){
+            return $this->render('frise/indexNewUser.html.twig');
+        }
+
+
         // recupere les events +trie ASC
         $eventP = $personalEvenRepository->findBy([], ['date' => 'ASC']);
         $eventDate = [];
@@ -23,11 +29,16 @@ class FriseController extends AbstractController
         $i = -1;
         $j = 0;
         foreach($eventP as $value){
+           
+
             if($value->getDate()->format('Y') == $d){
                 $j++;
                 $eventDate[$i]['eventP'][$j] = $value;
+
+                
             }
             else{
+
                 $j = 0;
                 $i++;
                 $eventDate[$i]['date'] = $value->getDate()->format('Y');
@@ -40,9 +51,17 @@ class FriseController extends AbstractController
                 // $dateMax = $dateMax->modify('+1 month');
 
                 $eventDate[$i]['evenHistorique'] = $historyEvenRepository->findByDate($value->getDate());
-            }
+                if($i>3){
+                    break;
+                }
+             
+                
+                };
+            
+           
+
+            
         }
-        // dd($eventDate);
         return $this->render('frise/index.html.twig', [
             // 'personal_evens' => $personalEvenRepository->findAll(),
             // 'history_evens' => $historyEvenRepository->orderByDate('date'),

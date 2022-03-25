@@ -1,0 +1,85 @@
+/*TYPOGRAPHIES DU SITE COMPLET*/
+@font-face{
+    font-family: "eczar-bold";
+    src: url(../font/Eczar/Eczar-Bold.ttf);
+}
+@font-face {
+    font-family: "eczar-extra-bold";
+    src: url(../font/Eczar/Eczar-ExtraBold.ttf);
+}
+@font-face {
+    font-family: "work-light";
+    src: url(../font/Work_Sans/WorkSans-Light.ttf);
+}
+@font-face{
+   font-family: "work-regular";
+   src: url(../font/Work_Sans/WorkSans-Regular.ttf);
+}
+@font-face {
+    font-family: "work-medium";
+    src: url(../font/Work_Sans/WorkSans-Medium.ttf);
+}
+@font-face {
+    font-family: "work-semibold";
+    src: url(../font/Work_Sans/WorkSans-SemiBold.ttf);
+}
+@font-face {
+    font-family: "advent-regular";
+    src: url(../font/Advent_Pro/AdventPro-Regular.ttf);
+}
+@font-face {
+    font-family: "advent-semibold";
+    src: url(../font/Advent_Pro/AdventPro-SemiBold.ttf);
+}
+
+
+/*VARIABLES TYPOGRAPHIES*/
+:root{
+
+/*COULEURS*/
+    --green: #849994;
+    --brown: #9E9286;
+    --pink:#D4C1BA;
+    --ecru:#F4F3EF;
+    --khaki:#C0BDA1;
+    --grey-blue:#A1B7C0;
+    --turquoise:#5EEAC8;
+    --rouge:#E14E4E;
+    --orange:#FF7C4B;
+    --black:#363636;
+    --yellow:#FFF278;
+    --blue:#8CDDFF;
+}
+
+
+
+body{
+    background-image: url(../images/background\ desktop\ 1920x1140px.png);
+    background-color: var(--ecru);
+    background-position: center;
+    height: 100vh;
+    margin:0;
+    position: relative;
+}
+
+/* Nav BAR */
+
+.navbar{
+    width: 100vw;
+    height: 9vh;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+    font-size: 1em;
+    background-color: var(--ecru);
+    padding: 0rem, 0rem, 0.8rem, 0rem;
+}
+.navbar-menu{
+    border-bottom: 1px solid rgba(36, 36, 36, 0.577);
+}
+.navbar-menu ul li{
+    list-style: none;
+}
+.navbar-menu ul li a{
+    color: var(--black);
+    text-decoration: none;
+}

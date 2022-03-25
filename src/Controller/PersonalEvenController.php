@@ -44,6 +44,8 @@ class PersonalEvenController extends AbstractController
      */
     public function show(PersonalEven $personalEven): Response
     {
+
+        // dd($personalEven->getMedia());
         return $this->render('personal_even/show.html.twig', [
             'personal_even' => $personalEven,
         ]);

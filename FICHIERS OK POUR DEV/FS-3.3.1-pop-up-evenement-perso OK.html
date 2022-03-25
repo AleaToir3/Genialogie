@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dossier de travail/assets/css/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Advent+Pro:wght@400;600&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,600;1,400&display=swap" rel="stylesheet">
+
+    <title>FS-3.3.1-Pop-Up</title>
+
+    <link rel="stylesheet" href="assets/css/bootstrap.css">
+    <link rel="stylesheet" href="assets/css/style-FS.3.3.1-pop-up-evenement.css">
+
+</head>
+
+<body>
+
+
+  
+
+
+  <!--
+
+                    CONTENU DU POP UP -->
+                    <!-- icone fermer -->
+                    <div class="close">
+                        <img src="./assets/icones/icone-fermer-noir.svg" alt="fermer">
+                    </div>
+                    <!-- icone fermer -->
+                <div id="popup-perso-1979"> 
+                    <artcicle class="container-fluid">
+
+                        <!-- 1ERE TRANCHE - photo de cover -->
+                        <div class="row container-cover">
+                            <div class="col-xl-1 col-xxl-2">
+                                <!-- div vide -->
+                            </div>
+                            <div class="col-xl-10 col-xxl-8">
+                                <img class="img-fluid img-cover-event" src="assets/images/1979-perso-cover.jpg"
+                                    alt="Brigitte et Jules">
+                            </div>
+
+                            <div class="col-xl-1 col-xxl-2">
+                                <!-- div vide -->
+                            </div>
+                        </div>
+
+                        <!-- 2EME TRANCHE - 3 cards -->
+                        <div class="row article-header">
+                            <div class="col-12 col-md-1 col-xl-1 col-xxl-2">
+                                <!-- div vide -->
+                            </div>
+
+                            <div class="col-12 col-md-11 col-xl-7 col-xxl-5">
+                                <div class="row align-items-center title-and-icon">
+                                    <div class="col-2">
+                                        <div class="box-border-radius">
+                                            <img class="icon-100" src="assets/icones/icone-rencontre.svg"
+                                                alt="icon-red-love">
+                                        </div>
+                                    </div>
+                                    <div class="col-10 border-left-1979">
+                                        <h2>Ma rencontre avec Jules</h2>
+                                        <p class="date-event"><span class="number-small">19</span><span
+                                                class="number-big">79</span></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- ici, double-card avec pastilles - musique (audio) + auteur de l'évènement -->
+
+                            <div class="col-12 col-md-12 col-xl-3 col-xxl-3 container-double-card">
+                               <div class="double-card-column">
+                                    <div class="row music justify-content-center align-items-center">
+                                        <!-- card - 1ère partie - musique -->
+                                        <div class="col-2 col-md-2 col-xl-3 col-xxl-2">
+                                            <!-- AUDIO PLAYER -->
+                                            <!--Conteneur du lecteur audio-->
+                                            <div class="audio-content">
+                                                <!--La balise audio est indispensable. Indiquer le morceau qui doit est lu dans l'attribut src-->
+                                                <audio id="player"
+                                                    src="assets/audio/Les Rita Mitsouko - Le petit train .mp3"
+                                                    controls></audio>
+                                            </div>
+    
+                                            <!-- fin audio player -->
+                                            <a href="#">
+                                                <!-- balise audio à ajouter où ?? -->
+                                                <!-- ici, pour écouter le morceau il faut du JS -->
+                                                <img id="play" class="icone-player play"
+                                                    src="assets/icones/icone-audio-play-filet.svg" alt="icon audio play">
+                                                <img id="pause" class="icone-player pause"
+                                                    src="assets/icones/icone-audio-pause-filet.svg" alt="">
+                                            </a>
+    
+    
+    
+    
+                                        </div>
+                                        <div class="col-10 col-md-10 col-xl-9 col-xxl-10">
+                                            <p class="song-title">Le petit train</p>
+                                            <p class="brand-name">Les Rita Mitsouko</p>
+                                        </div>
+    
+                                    </div>
+    
+                                    <div class="row author justify-content-center align-items-center">
+                                        <!-- card - 2ème partie - émotion -->
+                                        <div class="col-2 col-md-2 col-xl-3 col-xxl-2">
+                                            <img src="assets/icones/emo-passion-select.svg" alt="icon-red-passion">
+                                        </div>
+                                        <div class="col-10 col-md-10 col-xl-9 col-xxl-10">
+                                            <p class="author-intro">Crée par</p>
+                                            <p class="author-name">Brigitte <!-- <br> -->
+                                                De Pampelune</p>
+                                        </div>
+                                    </div>
+                               </div>
+                            </div>
+
+                            <div class="col-12 col-md-12 col-xl-1 col-xxl-2">
+                                <!-- div vide -->
+                            </div>
+
+                        </div>
+
+                        <div class="swipe">
+                            <img src="./assets/icones/icone-chevron-droite.svg" alt="vers page historique">
+                        </div>
+
+                        <!-- 3EME TRANCHE -->
+                        <div class="row story">
+                            <div class="col-12 col-md-2">
+                                <!-- ceci est un div vide -->
+
+                            </div>
+
+                            <div class="col-12 col-md-6">
+                                <h5>Dans le train, de Grenoble à Paris</h5>
+                                <p class="p-story">
+                                    J’avais 21 ans et rentrais de Grenoble où je venais de passer mes vacances d’hiver
+                                    en faisant du ski pendant 10 jours. Un jeune homme est arrivé dans le wagon en
+                                    courant.
+                                    Il a essayé de ranger ses affaires sur l’étagère au-dessus de ma tête.
+                                    Plusieurs objets se sont mis à glisser, j’ai vu des fusains et un carnet de dessin
+                                    chuter.
+                                </p>
+                                <p class="p-story-2">
+                                    Le carnet s’est ouvert en arrivant au sol...
+                                    Je n’ai pas pu m’empêcher de le regarder, j’ai vu des paysages et des animaux,
+                                    peints en aquarelle. <br>
+                                    Le prochain objet, encore un carnet de dessin est tombé directement sur la tête de
+                                    la femme assise à côté.
+                                    La femme me semblait très énervée.
+                                    Cette fois-ci le carnet a dévoilé des dessins de nus dont le dernier a glissé enfin
+                                    du chignon de la dame, puis est atterri au sol.
+                                    J’ai dû me retenir pour ne pas en rire trop fort.
+                                </p>
+
+                                <p class="p-story-2">
+                                    Le jeune homme s’est assis juste en face en constatant que la scène m’a bien
+                                    amusée...
+                                    Il m’a ensuite abordée pour demander où je voyageais. <br>
+                                    Il m’a parlé de ses études dans le commerce international,
+                                    mais surtout des ateliers de dessin auxquels il participait depuis plusieurs années.
+                                    Il a fini par m’inviter à un de ces ateliers…
+                                </p>
+
+                            </div>
+
+                            <div class="col-12 col-md-4">
+
+                                <!-- ceci est un div vide -->
+
+                            </div>
+
+                        </div>
+
+                        <!-- 4EME TRANCHE -->
+                        <div class="container-img-event">
+                            <img src="assets/images/1979-perso-diapo1.jpg" alt="Brigitte jeune">
+                            <img src="assets/images/1979-perso-diapo2.jpg" alt="Bébé dans une poussette">
+                            <img src="assets/images/1979-perso-diapo3.jpg" alt="Un couple sous le parapluie">
+                            <img src="assets/images/1979-perso-diapo4.jpg" alt="Brigitte danse come une folle">
+
+                           
+
+                        </div>
+
+                        
+                    </artcicle>
+                </div> 
+              
+
+   
+
+    <script src="assets/java-script/audio.js"></script>
+    <script src="assets/java-script/bootstrap.js"></script>
+
+  
+</body>
+
+</html>

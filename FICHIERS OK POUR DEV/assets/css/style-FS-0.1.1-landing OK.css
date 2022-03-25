@@ -1,0 +1,716 @@
+/* SOMMAIRE 
+    A TYPOGRAPHIE ET COULEURS
+    B NAV BAR --------------------80
+    C HEADER  -------------------125
+    D MAIN ----------------------150
+        D1 NO FOCUS -------------150
+        D2 FOCUS-----------------266
+        D3 FRISE PIED DE PAGE----380
+    E MODALES--------------------426
+        E1 AJOUT EVENEMENT
+        E2 VISUALISATION EVENEMENT
+ */
+
+/* A TYPOGRAPHIE ET COULEURS */
+/*TYPOGRAPHIES DU SITE COMPLET*/
+@font-face{
+    font-family: "eczar-bold";
+    src: url(../font/Eczar/Eczar-Bold.ttf);
+}
+@font-face {
+    font-family: "eczar-extra-bold";
+    src: url(../font/Eczar/Eczar-ExtraBold.ttf);
+}
+@font-face {
+    font-family: "work-light";
+    src: url(../font/Work_Sans/WorkSans-Light.ttf);
+}
+@font-face{
+   font-family: "work-regular";
+   src: url(../font/Work_Sans/WorkSans-Regular.ttf);
+}
+@font-face {
+    font-family: "work-medium";
+    src: url(../font/Work_Sans/WorkSans-Medium.ttf);
+}
+@font-face {
+    font-family: "work-semibold";
+    src: url(../font/Work_Sans/WorkSans-SemiBold.ttf);
+}
+@font-face {
+    font-family: "advent-regular";
+    src: url(../font/Advent_Pro/AdventPro-Regular.ttf);
+}
+@font-face {
+    font-family: "advent-semibold";
+    src: url(../font/Advent_Pro/AdventPro-SemiBold.ttf);
+}
+
+
+/*VARIABLES COULEURS*/
+:root{
+
+/*COULEURS*/
+    --green: #849994;
+    --brown: #9E9286;
+    --pink:#D4C1BA;
+    --ecru:#F4F3EF;
+    --khaki:#C0BDA1;
+    --grey-blue:#A1B7C0;
+    --turquoise:#5EEAC8;
+    --rouge:#E14E4E;
+    --orange:#FF7C4B;
+    --black:#363636;
+    --yellow:#FFF278;
+    --blue:#8CDDFF;
+}
+
+/* FOND FRISE PRINCIPALE*/
+body{
+    background-image: url(../images/background\ desktop\ 1920x1140px.png);
+    background-position: center;
+    height: 100vh;
+    margin:0;
+}
+
+/* B NAV BAR */
+
+.navbar{
+    width: 100vw;
+    height: 9vh;
+    font-family: "work-regular";
+    font-size: 1em;
+    background-color: var(--ecru);
+    padding: 0rem, 0rem, 0.8rem, 0rem;
+}
+.navbar-menu{
+    border-bottom: 1px solid black;
+}
+.navbar-menu ul li{
+    list-style: none;
+}
+.navbar-menu ul li a{
+    color: var(--black);
+    text-decoration: none;
+}
+
+/* Fin B NAV BAR */
+
+
+
+/*HAUTEUR DES SECTIONS - LE TOTAL DES HAUTEURS DOIT ÊTRE EGAL A 100VH SANS OUBLIER LA HAUTEUR DE LA NAVBAR AU DESSUS */
+header{
+    height: 14vh;
+}
+main{
+    height: 70vh;
+}
+footer{
+    height:0vh;
+}
+
+/* C HEADER */
+
+/*CONFIGURATION HEADER*/
+.texte-welcome p{
+    font-family: "work-light";
+    font-size: 1.5em;
+}
+header h1{
+    font-family: "eczar-bold";
+    font-size: 3em;
+}
+.btn-outline-lg-ajout{
+    border-radius: 5px;
+    background-color: white;
+    padding:0.4rem;
+
+    display: flex;
+    align-items: center;
+}
+
+/* FIN HEADER */
+
+/*BLOC SCROLL FRISE PRINCIPALE*/
+.bloc-scroll{
+    height: 68vh;
+    width: 100vw;
+/* FONCTIONS SCROLL*/
+    scroll-behavior: smooth;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    transform-origin:left;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+/* D MAIN */
+/* D1 NO FOCUS */
+
+/*CARD NO FOCUS = EVENT HISTO + EVENT PERSO SMALL
+CI-DESSOUS TOUS LES ELEMENTS COMMUNS AUX EVENTS NO FOCUS*/
+.card-event-nofocus {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 16.6vw;
+    height: 50vh;
+    margin-top: -6vh;
+}
+.ligne-dots{
+    margin: -1vh;
+}
+
+/*TITRE DANS ETIQUETTE*/
+.title {
+    display: inline-block;
+    transform: rotate(2deg);
+    font-size: 1vh;
+}
+
+/*EVENT HISTO NO FOCUS*/
+.historic-event{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}
+.img-histo{
+    margin-bottom: -2rem;
+}
+.historic-event .tag{
+    display: inline-block;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 3.17053px;
+    text-align: center;
+    width: 18vh;
+    height:4vh;
+    font-family: "work-medium";
+    font-size: 1.25em;
+
+    background-color: white;
+    padding: 0.5em;
+    margin: 1em;
+    transform: rotate(-2deg);     
+}
+
+/* BLOC DATE ENTRE LES 2 EVENTS NO FOCUS
+DATE DASH = POINTS HAUT ET BAS DES DATES NO FOCUS*/
+.date {
+    vertical-align: top;
+    align-items: center;
+}
+.date .century {
+    vertical-align: top;
+    display: inline-block;
+    font-family: "advent-regular";
+    font-size: 1.3rem;
+    color: white;
+    text-align: center;
+}
+.date .decade{
+    vertical-align: top;
+    font-size: 3rem;
+    display: inline-block;
+    font-family: "advent-semibold";
+    color: white;
+    text-align: center;
+}
+
+/*EVENT PERSO NO FOCUS*/
+.personal-event {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    height: 236px;
+    margin-top: -4vh;
+}
+.personal-event .tag{
+    background-color: white;
+    padding: 0.5em;
+    margin: 1em;
+
+    position: relative;
+    top: 30px; left: 0px;
+
+    transform: rotate(-2deg);
+    display: flex;
+
+    display: inline-block;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 3.17053px;
+    text-align: center;
+    width: 18vh;
+    height:4vh;
+    font-family: "work-medium";
+    font-size: 1.25em;
+}
+.personal-picture{
+    background-color: var(--brown);
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 8.01688px;
+}
+
+/* FIN NO FOCUS */
+
+/* D2 FOCUS */
+
+/*CARD FOCUS = EVENT HISTO + EVENT PERSO LARGE*/
+.card-event-focus{
+    width: 30vw;
+    height:68vh;
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.tag-focus{
+    display: inline-block;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 3.17053px;
+    background-color: white;
+    width: 22vh;
+    height: 4em;
+}
+.title-focus {
+    display: inline-block;
+    transform: rotate(2deg);
+    font-size: 1.3vh;
+    margin-top: 0.5vh;
+    font-family: "work-semibold";
+}
+
+/*EVENT HISTO FOCUS*/
+.historic-event-focus{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+}
+.img-histo-focus{
+    height:25vh;
+    width:15vw;
+
+}
+.historic-event-focus .tag-focus{
+    background-color: white;
+    padding: 0.5em;
+    margin: -3.5em;
+    transform: rotate(-2deg);
+}
+
+/*BLOC DATE FOCUS - PASTILLE ORANGE*/
+.date-focus {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 6vh;
+    width: 12vh;
+    height: 12vh;
+
+    background-color: var(--orange);
+    border-style: solid;
+    border-radius: 10vh;
+    border-width: 1vh;
+    border-color: blanchedalmond;
+    box-shadow: 0px 0px 19.2907px 6.43023px rgba(0, 0, 0, 0.25);
+}
+.century-focus{
+    font-family: "advent-regular";
+    font-size: 1.8rem;
+    color: white;
+}
+.decade-focus{
+    font-family: "advent-semibold";
+    font-size: 3.5rem;
+    color: white;
+}
+
+/*EVENT PERSO FOCUS*/
+.personal-event-focus{
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1vh;
+    height: 235px;
+}
+.personal-event-focus .tag-focus{
+    background-color:white;
+    height:4.2em;
+    padding: 0.5em;
+
+    position: relative;
+    top: 8px; left: 0px;
+
+    transform: rotate(-2deg);
+    display: flex;
+}
+.personal-picture-focus{
+    background-color: var(--brown);
+    height:20vh;
+    width:15vw;
+    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 8.01688px;
+}
+.img-perso-focus{
+    margin-top: -5vh;
+}
+
+/*EVENEMENTS NON VISIBLES SUR L'ECRAN*/
+.visibilite-event{
+    display: none;
+    visibility: hidden;
+}
+
+/*D3 FRISE DECENNIE PIED DE PAGE*/
+.timeline-dot {
+    height: 7vh;
+}
+
+.year-scroll{
+    width: 100%;
+    /*height: 70%;  probleme avec la valeur que j'ai malencontreusement remplacées*/
+/*FONCTION SCROLL FRISE*/
+    scroll-behavior: smooth;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    transform-origin: left;
+
+    display: flex;
+    justify-content: flex-start;
+}
+
+.btn-year{
+    width: 46px;
+    height:46px;
+    padding:5px;
+    border-radius: 50px;
+    border-style: solid;
+    border-width: 3px;
+    background-color:goldenrod;
+    border-color: blue;
+    font-size: 25px;
+}
+.year-small{
+    width:17px;
+    height:17px;
+    border-radius: 50px;
+    background-color: red;
+    font-size: 11px;
+    margin-top: 5px;
+}
+.year-big{
+    margin-top: -8px;
+}
+
+/*.card-event-nofocus{
+    visibility: hidden;
+}*/
+
+/*FIN D3 FRISE DECENNIE PIED DE PAGE*/
+
+/* E MODALES */
+
+/* E1 AJOUT EVENEMENT (nico et suyline */
+
+/* première partie réalisé par somi */
+.content-on-off {
+    background: linear-gradient(to right, green 50%, red 50%);
+    border-radius: 50px;
+    box-shadow: 3px 3px 6px 0px rgb(0, 0, 0, 0.5) inset;
+    height: 43px;
+    margin-bottom: 15px;
+    position: relative;
+    width: 66px;
+}
+
+.on-off {
+    appearance: none;
+    background-color: rgb(138, 138, 138);
+    border: 3px solid rgb(172, 172, 172);
+    border: 3px solid rgb(182, 182, 182);
+    border-radius: 50%;
+    box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.5) inset, 4px 4px 6px 0px rgba(0, 0, 0, 0.7), -1px -1px 0.52px 0px rgba(255, 255, 255, 0.1) inset;
+    display: inline-block;
+    height: 43px;
+    margin: 0;
+    transition: all 0.3s linear 0s;
+    transform: translateX(-1px);
+    width: 43px;
+}
+
+.on-off:checked {
+    transform: translateX(24px);
+}
+
+
+.on-off::after {
+    content: "OFF";
+    display: block;
+    color: rgb(102, 102, 102);
+    font-size: 14px;
+    left: 0;
+    position: relative;
+    text-align: center;
+    text-shadow: 1px 1px 1px rgb(172, 172, 172), -1px -1px 1px rgb(54, 54, 54);
+    top: 10px;
+}
+
+.on-off:checked::after {
+    content: "ON";
+}
+/* FIN E1 AJOUT EVENEMENT */
+
+/* E2 VISUALISATION EVENEMENT (anna et victoire)*/
+
+/* pop up début Anna */
+
+#popup-perso-1979 .modal-xl{
+    max-width: 100vh;
+}
+
+#popup-perso-1979 {
+    background-color: var(--ecru);
+}
+
+.box-border-radius{
+    width: 75px;
+    height: 75px;
+    background-color: var(--rouge);
+    border-radius: 50px;
+}
+
+.img-cover-event{
+    border-radius: 54px;
+}
+
+.border-left-1979 h2{
+    color: var(--orange);
+}
+
+/* Double card */
+
+.container-double-card{
+    margin-top: 2vh;
+}
+
+.double-card-column{
+    background: #FFFFFF;
+    border-radius: 54px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 13px;
+    padding-right: 13px;
+}
+
+.double-card-column p{
+    margin-bottom: 0;
+}
+
+/* AUDIO  */
+
+.double-card-column .music{
+    background: var(--grey-blue);
+    border-radius: 52px;
+    padding: 9px 16px;
+    margin: auto 0 20px 0;
+}
+
+.double-card-column .music p{
+    color: var(--ecru);
+}
+
+.song-title{
+    font-family: 'Work Sans', sans-serif;
+    font-size: 0.9em;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+}
+
+/*Le conteneur du lecteur audio est en display none pour qu'il soit invisible*/
+.audio-content{
+    display: none;
+}
+
+
+/*icone lecture et pause*/
+.icone-player{
+    margin-right: 10px;
+}
+
+
+/*Par défaut le bouton pause est invisible*/
+.pause{
+    display: none;
+}
+
+
+/* FIN AUDIO   */
+
+/* emotion+auteur */
+.brand-name{
+    font-family: 'Work Sans', sans-serif;
+    font-size: 0.9em;
+    font-weight: 400;
+    letter-spacing: 0.4px;
+}
+
+.author-intro{
+    font-family: 'Work Sans', sans-serif;
+    font-size: 0.8em;
+    font-weight: 400;
+    letter-spacing: 0.4px;
+}
+
+.author-name{
+    font-family: 'Work Sans', sans-serif;
+    font-size: 0.9em;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+}
+
+.double-card-column .author{
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 0.5px solid var(--black);
+    margin: auto 0;
+}
+/* Fin emotion+auteur */
+
+
+
+
+
+.article-header{/* organistion titre+auteur */
+
+    margin-top: 83px;
+}
+
+/* SOLUTION - DATE AVEC CHIFFRES DE TAILLES DIFFERENTES */
+
+.date-event .number-small{
+    display: inline-block;
+    margin-top: 12px;
+    vertical-align: top;
+}
+
+.date-event{
+    margin-bottom: -1rem;
+}
+
+
+.story{
+    margin-top: 87px;
+}
+
+.p-story{
+    margin-top: 55px;
+}
+
+
+
+
+.icon-100{
+    width: 100%;
+    
+    padding: 18px;
+}
+
+.container-img-event{
+    display: flex;
+    width: 80%;
+    height: 310px;
+    scroll-behavior: smooth;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    transform-origin: left;
+    margin: auto;
+    position:relative;
+    margin-top: 100px;
+}
+
+.container-img-event > img{
+    margin-right: 25px;
+}
+
+.container-img-event > img:last-child{
+    margin-right: 0px;
+}
+
+
+.border-left-1979{
+    border-left: 0.5px solid var(--black);
+    padding-left: 20px;
+}
+
+/* typographie pop up */
+
+.border-left-1979 h2{
+    font-family: 'Work Sans', sans-serif;
+    font-size: 3.375em;
+}
+
+
+.border-left-1979 .date-event .number-small{
+    font-family: 'Advent Pro', sans-serif;
+    font-weight: 600;
+    font-size: 1.438em; /* initialment 2.25 em */
+    letter-spacing: 0.02em;
+}
+
+.border-left-1979 .date-event .number-big{
+    font-family: 'Advent Pro', sans-serif;
+    font-weight: 400;
+    font-size: 3.25em;
+}
+
+
+#popup-perso-1979 H5 {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+    font-size: 1.375em;
+}
+
+.p-story, .p-story-2{
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+    font-size: 1em;
+}
+
+/* TEST RESPONSIVE POP UP - ANNA */
+/* 
+@media screen and (max-width: 576px){
+    /* typos à resizer ici pour petit écran */
+ /*    .article-header h2{
+        font-size: 2em;
+    }
+
+    .number-small{
+        font-size: 2em;
+    }
+    
+    .number-big{
+        font-size: 3em;
+    }
+
+    .box-border-radius{
+        width: 55px;
+        height: 55px;
+    }
+
+}  */
+/* FIN E2 VISUALISATION EVENEMENT */

@@ -1,0 +1,166 @@
+/*TYPOGRAPHIES DU SITE COMPLET*/
+@font-face{
+    font-family: "eczar-bold";
+    src: url(../font/Eczar/Eczar-Bold.ttf);
+}
+@font-face {
+    font-family: "eczar-extra-bold";
+    src: url(../font/Eczar/Eczar-ExtraBold.ttf);
+}
+@font-face {
+    font-family: "work-light";
+    src: url(../font/Work_Sans/WorkSans-Light.ttf);
+}
+@font-face{
+   font-family: "work-regular";
+   src: url(../font/Work_Sans/WorkSans-Regular.ttf);
+}
+@font-face {
+    font-family: "work-medium";
+    src: url(../font/Work_Sans/WorkSans-Medium.ttf);
+}
+@font-face {
+    font-family: "work-semibold";
+    src: url(../font/Work_Sans/WorkSans-SemiBold.ttf);
+}
+@font-face {
+    font-family: "advent-regular";
+    src: url(../font/Advent_Pro/AdventPro-Regular.ttf);
+}
+@font-face {
+    font-family: "advent-semibold";
+    src: url(../font/Advent_Pro/AdventPro-SemiBold.ttf);
+}
+
+
+/*VARIABLES TYPOGRAPHIES*/
+:root{
+
+/*COULEURS*/
+    --green: #849994;
+    --brown: #9E9286;
+    --pink:#D4C1BA;
+    --ecru:#F4F3EF;
+    --khaki:#C0BDA1;
+    --grey-blue:#A1B7C0;
+    --turquoise:#5EEAC8;
+    --rouge:#E14E4E;
+    --orange:#FF7C4B;
+    --black:#363636;
+    --yellow:#FFF278;
+    --blue:#8CDDFF;
+}
+
+
+
+body{
+   
+    background-color: var(--ecru);
+    background-position: center;
+    height: 100vh;
+    margin:0;
+    position: relative;
+}
+
+/* Nav BAR */
+
+.navbar{
+    width: 100vw;
+    height: 9vh;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+    font-size: 1em;
+    background-color: var(--ecru);
+    padding: 0rem, 0rem, 0.8rem, 0rem;
+}
+.navbar-menu{
+    border-bottom: 1px solid rgba(36, 36, 36, 0.577);
+}
+.navbar-menu ul li{
+    list-style: none;
+}
+.navbar-menu ul li a{
+    color: var(--black);
+    text-decoration: none;
+}
+
+/* FIN Nav BAR */
+
+/*HAUTEUR DES SECTIONS - LE TOTAL DES HAUTEURS DOIT ÊTRE EGAL A 100VH SANS OUBLIER LA HAUTEUR DE LA NAVBAR AU DESSUS */
+header{
+    height: 14vh;
+}
+main{
+    height: 70vh;
+}
+footer{
+    height:0vh;
+}
+
+/*CONFIGURATION HEADER*/
+.texte-welcome p{
+    font-family: 'Work Sans', sans-serif;
+    font-size: 1.5em;
+}
+header h1{
+    font-family: "eczar-bold";
+    font-size: 3em;
+}
+.btn-outline-lg-ajout{
+    border-radius: 5px;
+    background-color: white;
+    padding:0.4rem;
+
+    display: flex;
+    align-items: center;
+}
+
+/* Fin header */
+
+
+
+/*FRISE DECENNIE PIED DE PAGE*/
+.timeline-dot {
+    height: 7vh;
+}
+
+.year-scroll{
+    width: 100%;
+/*FONCTION SCROLL FRISE*/
+    scroll-behavior: smooth;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    transform-origin: left;
+
+    display: flex;
+    justify-content: flex-start;
+}
+
+.btn-year{
+    width: 50px;
+    height:46px;
+    padding:6px;
+    border-radius: 50px;
+    border-style: solid;
+    border-color:var(--ecru);
+    border-width: 3px;
+    background-color: #849994;
+    border-color: none;
+    font-family: "advent-regular";
+    font-size: 26px;
+    color: white;
+}
+.year-small{
+    width:17px;
+    height:17px;
+    border-radius: 50px;
+    background-color:white;
+    font-family: "advent-regular";
+    font-size: 11px;
+    color: black;
+    margin-top: 5px;
+}
+.year-big{
+    margin-top: -8px;
+}
+
