@@ -28,8 +28,12 @@
 	</div>
 </article>
 
+{{ form_start(form) }}
+
 <!-- Liste inputs -->
 <div class="container-fluid d-flex flex-row flex-nowrap">
+
+
 	<section
 		class="bloc-inputs d-flex flex-column">
 		<!-- dropdown type d'event -->
@@ -76,7 +80,7 @@
 				</div>
 			</ul>
 		</div>
-{{ form_start(form) }}
+
 
 		<!-- autres champs saisie -->
 		<div class="input-date">
@@ -95,6 +99,8 @@
                     {{ form_widget(form.legend, {'attr': {'placeholder': 'Je choisis une légende à mon évènement '}}) }}
 
         </div>
+        
+   
     </section>
     
 <!-- JAUGE -->               
@@ -108,7 +114,7 @@
         </div>
 
         <div class="bloc-emotion">
-            <form class="d-flex flex-row flex-nowrap align-items-center justify-content-center">
+            <div class="d-flex flex-row flex-nowrap align-items-center justify-content-center">
                 <div class="card-emotion"> 
                     <input type="radio" name="emotion" id="emotion-peur" value="peur">
                     <label for="emotion-peur" class="d-flex flex-column flex-nowrap align-items-center">
@@ -156,7 +162,7 @@
                     <p>Tristesse</p>
                 </label>
                 </div>
-            </form>
+            </div>
 
         </div>
     </section>
@@ -259,10 +265,13 @@
         <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>-->
 
             {# <button class="btn-cta-full">{{ button_label|default('Publier mon évènement') }}</button> #}
-{# <button class="btn">{{ button_label|default('Enregistre') }}</button>
-{{ form_end(form) }} #}
+        {# <button class="btn">{{ button_label|default('Enregistre') }}</button> #}
+        <button type="submit">{{ button_label|default('Enregistre') }}</button>
+
     </article>  
 </div>
+
+{{ form_end(form) }} 
 
 <footer>
     <br>

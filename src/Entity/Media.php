@@ -22,7 +22,7 @@ class Media
     
     /**
      * @ORM\ManyToOne(targetEntity=PersonalEven::class, inversedBy="media")
-     */
+     */  
     private $personalEven;
 
     /**
@@ -46,7 +46,7 @@ class Media
         $this->video = new ArrayCollection();
         $this->music = new ArrayCollection();
     }
-
+ 
 
     public function getId(): ?int
     {
