@@ -10,7 +10,7 @@
 
 {% block body %}
 
-       
+
 <div class="container-fluid bloc-logo-h1 d-flex flex-row flex-nowrap justify-content-center">
     <div class="container bloc-logo d-flex align-items-center justify-content-center ">
         <img src="assets/icones/logo-orange.svg" alt="logo">
@@ -26,8 +26,11 @@
         {{ form_widget(registrationForm.name, {'attr':{'placeholder': 'Nom','class' : 'title-area'}}) }}
         {{ form_widget(registrationForm.firstname, {'attr':{'placeholder': 'Prenom','class' : 'title-area'}}) }}
         {{ form_widget(registrationForm.birthday, {'attr':{'class' : 'date-area'}}) }}
-        {{ form_widget(registrationForm.email,{'attr':{'placeholder': 'Email','class' : 'title-area'}}) }}
-        {{ form_widget(registrationForm.plainPassword, {'attr':{'placeholder': 'Password','class' : 'title-area'}}) }}
+        {{ form_row(registrationForm.email,{'attr':{'placeholder': 'Email','class' : 'title-area'}}) }}
+        {# {{ form_widget(registrationForm.plainPassword, {'attr':{'placeholder': 'Password','class' : 'title-area'}}) }} #}
+        {# {{ form_widget(registrationForm.password_confirm, {'attr':{'placeholder': 'Confirme password','class' : 'title-area'}}) }} #}
+        {{ form_row(registrationForm.plainPassword.first, {'attr':{'placeholder': 'Entré un mot de passe','class' : 'title-area'}}) }}
+        {{ form_row(registrationForm.plainPassword.second, {'attr':{'placeholder': 'Confirmez le mot de passe','class' : 'title-area'}}) }}
     </div>
 </div>
 

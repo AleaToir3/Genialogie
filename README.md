@@ -14,3 +14,21 @@ confirmlation de password
 REMOVE LES HEURE ET MINUTE DANS LA DATE DE REGISTER
 
 AJOUTER UN EVEN A CODER  ---- submit marche pas 
+
+
+
+
+
+VICTOIRE :
+
+LES CROIX 
+CSS INDEX
+Les TYPO
+LES LIENS 
+
+
+
+
+
+demain
+ADD EVENT

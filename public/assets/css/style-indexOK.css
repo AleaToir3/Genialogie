@@ -194,7 +194,8 @@ CI-DESSOUS TOUS LES ELEMENTS COMMUNS AUX EVENTS NO FOCUS*/
     text-align: center;
     width: 18vh;
     height:4vh;
-    font-family: "work-medium";
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
     font-size: 1.25em;
 
     background-color: white;

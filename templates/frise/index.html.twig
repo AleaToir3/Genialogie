@@ -9,6 +9,13 @@
 {% endblock stylesheets  %}
 
 {% block body %}
+
+{# 
+ {% for even in evens %}
+{{dump(even) }}
+{% endfor %} #}
+
+
   <!-- DEBUT HEADER -->
     <header>
         <div class="container">
@@ -39,13 +46,19 @@
 
         <div class="bloc-scroll">
             {% for even in evens %}
+   {# {{ dump(even.evenHistorique) }}  #}
                 {% set foo = loop.index  %}
 
                 {% if  foo == 3 %} 
                 
-            <!-- Event 6: Sortie de l'album Thriller -->
+                <!--  FOCUS -->
+                <!--  FOCUS -->
+                <!--  FOCUS -->
+                <!--  FOCUS -->
+                <!--  FOCUS -->
+
                     <article class="card-event-focus">
-                        <a href="{{ path('app_history_even_show',{ id: even.evenHistorique.id }) }}" id="cardlinkmix">
+                        <a href="{{ path('app_history_even_show',{ id: even.evenHistorique.id }) }}">
                             <section class="historic-event-focus">
                                 <div class="img-focus">
                                     <img src="{{asset ('assets/images/') }}1980-histo.png" alt="album-thriller" class="img-histo-focus">
@@ -85,9 +98,15 @@
 
                 {% else %} 
                 
-                <!-- Event 12: Joséphine Baker entre au Panthéon-->
+                <!-- NON FOCUS -->
+                <!-- NON FOCUS -->
+                <!-- NON FOCUS -->
+                <!-- NON FOCUS -->
+                <!-- NON FOCUS -->
                         <article class="card-event-nofocus ">
-                        <a href="{{ path('app_history_even_show',{ id: even.evenHistorique.id }) }}" id="cardlinkmix">
+                        {# {{ dump(even) }} #}
+                        <a href="{{ path('app_history_even_show',{ id: even.evenHistorique.id }) }}">
+
 
                             <section class="historic-event">
                                 <div class="img-histo">
@@ -141,3 +160,4 @@
 
 
 {% endblock body %}
+
