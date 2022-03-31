@@ -1,148 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Eczar:wght@500;600&display=swap" rel="stylesheet">  
-     <link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,600;1,400&display=swap"  
-    <!--lien bootstrap-->
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>{% block title %}Genialogie{% endblock %}</title>   
-    
-    <link rel="stylesheet" href="{{ asset ('assets/css/bootstrap.css' )}}" type="text/css">   
-     {% block stylesheets %}      
-    <link rel="stylesheet" href="{{ asset ('assets/css/style-base.css' )}}" type="text/css">   
-    <link rel="stylesheet" href="{{ asset ('assets/css/style-FS.3.3.1-pop-up-evenement' )}}" type="text/css">  
-    {% endblock stylesheets %} 
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Eczar:wght@500;600&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,300;0,600;1,400&display=swap">
 
-
-    <!--lien bootstrap-->
-     
-</head>
-
-<!--Sommaire<
-    1 NAVBAR
-    2 HEADER
-    3 MAIN
-        3.A div avec un ID= Grande frise
-        3.B div avec un id= frise pastille
-    4 FOOTER
-        le footer doit etre vide
-<img src="{{ asset('img/social/facebook.png') }}" />
-
--->
-<body>
-
-{% if app.user %}
-     <!-- DEBUT NAVBAR -->
-<div class="container-fluid navbar">
-    <a href=" {{ path('Home') }}" class="logo-accueil"><img src="{{ asset('assets/icones/') }}logo-orange.svg" alt="logo"></a>
-
-    <nav class="container navbar-menu d-flex flex-nowrap justify-content-center">
-        <ul class="container d-flex justify-content-between">
-            <li><a href="#">Profil</a></li>
-            <li><a href="#">Notifications</a></li>
-            <li><a href="#">Bibliothèque</a></li>
-            <li><a href="#">Partager</a></li>
-            <li><a href="#">Confidentialité</a></li>
-            <li><a href="#">Aide</a></li>
-        </ul>
-    </nav>
-
-    <a href="{{ path('app_logout') }}" class="icone-deconnexion"><img src="{{ asset('assets/icones/') }}icone-deconnexion-gris.svg" alt="logo"></a>
-</div>
-{% endif %}
-    <!--3 MAIN-->
-    {# <main> #}
-     <!--Main la frise id=""-->
-     
-
-        {% block body %}
-        {% endblock %}
-        <!-- 3.B div avec un id= frise pastille-->
-{# 
-        <div class="timeline-dot">
-            <article class="year-scroll d-flex flex-row flex-nowrap justify-content-around">
-                <button type="button" id="year-1950"
-                    class="btn-year d-flex flex-column justify-content-center align-items-center">
-                    <div class="year-small">19</div>
-                    <div class="year-big">50</div>
-                </button>
-    
-                   <img src="{{ asset('assets/icones/') }}filet-frise-decennies.svg">
-   
-                <button type="button" id="year-1960"
-                    class="btn-year d-flex flex-column justify-content-center align-items-center">
-                    <div class="year-small">19</div>
-                    <div class="year-big">60</div>
-                </button>
-    
-                   <img src="{{ asset('assets/icones/') }}filet-frise-decennies.svg">
-   
-                <button type="button" id="year-1970"
-                    class="btn-year d-flex flex-column justify-content-center align-items-center">
-                    <div class="year-small">19</div>
-                    <div class="year-big">70</div>
-                </button>
-    
-                   <img src="{{ asset('assets/icones/') }}filet-frise-decennies.svg">
-   
-                <button type="button" id="year-1980"
-                    class="btn-year d-flex flex-column justify-content-center align-items-center">
-                    <div class="year-small">19</div>
-                    <div class="year-big">80</div>
-                </button>
-    
-                   <img src="{{ asset('assets/icones/') }}filet-frise-decennies.svg">
-   
-                <button type="button" id="year-1990"
-                    class="btn-year d-flex flex-column justify-content-center align-items-center">
-                    <div class="year-small">19</div>
-                    <div class="year-big">90</div>
-                </button>
-    
-                   <img src="{{ asset('assets/icones/') }}filet-frise-decennies.svg">
-   
-                <button type="button" id="year-2000"
-                    class="btn-year d-flex flex-column justify-content-center align-items-center">
-                    <div class="year-small">20</div>
-                    <div class="year-big">00</div>
-                </button>
-    
-                   <img src="{{ asset('assets/icones/') }}filet-frise-decennies.svg">
-   
-                <button type="button" id="year-2010"
-                    class="btn-year d-flex flex-column justify-content-center align-items-center">
-                    <div class="year-small">20</div>
-                    <div class="year-big">10</div>
-                </button>
-    
-                <img src="{{ asset('assets/icones/') }}filet-frise-decennies.svg">
-   
-                <button type="button" id="year-2020"
-                    class="btn-year d-flex flex-column justify-content-center align-items-center">
-                    <div class="year-small">20</div>
-                    <div class="year-big">20</div>
-                </button>
-            </article>
-        </div> #}
-
-         <!-- FIN 3.B div avec un id= frise pastille-->
-
-    {# </main> #}
+		<title>
+			{% block title %}Genialogie
+			{% endblock %}
+		</title>
+		<link rel="stylesheet" href="{{ asset ('assets/css/bootstrap.css' )}}" type="text/css">
+		{% block stylesheets %}
+			<link rel="stylesheet" href="{{ asset ('assets/css/style-base.css' )}}" type="text/css">
+			<link rel="stylesheet" href="{{ asset ('assets/css/style-FS.3.3.1-pop-up-evenement' )}}" type="text/css">
+		{% endblock stylesheets %}
 
 
-    <!--4 FOOTER-->
-    <footer>
+		<!--lien bootstrap-->
 
-    </footer>
-    
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+	</head>
 
-</body>
+	<!--Sommaire<
+	    1 NAVBAR
+	    2 HEADER
+	    3 MAIN
+	        3.A div avec un ID= Grande frise
+	        3.B div avec un id= frise pastille
+	    4 FOOTER
+	        le footer doit etre vide
+	-->
+	<body>
+
+		{% if app.user %}
+			<!-- DEBUT NAVBAR -->
+			<div class="container-fluid navbar">
+				<a href=" {{ path('Home') }}" class="logo-accueil"><img src="{{ asset('assets/icones/') }}logo-orange.svg" alt="logo"></a>
+
+				<nav class="container navbar-menu d-flex flex-nowrap justify-content-center">
+					<ul class="container d-flex justify-content-between">
+						<li>
+							<a href="#">Profil</a>
+						</li>
+						<li>
+							<a href="#">Notifications</a>
+						</li>
+						<li>
+							<a href="#">Bibliothèque</a>
+						</li>
+						<li>
+							<a href="#">Partager</a>
+						</li>
+						<li>
+							<a href="#">Confidentialité</a>
+						</li>
+						<li>
+							<a href="#">Aide</a>
+						</li>
+					</ul>
+				</nav>
+
+				<a href="{{ path('app_logout') }}" class="icone-deconnexion"><img src="{{ asset('assets/icones/') }}icone-deconnexion-gris.svg" alt="logo"></a>
+			</div>
+		{% endif %}
+		<!--3 MAIN-->
+		{# <main> #}
+		<!--Main la frise id=""-->{% block body %}
+		{% endblock %}
+		<!--4 FOOTER--><footer>
+		</footer><script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"> </script>
+
+	</body>
 </html>

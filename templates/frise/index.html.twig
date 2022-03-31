@@ -1,163 +1,172 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Accueil {{parent()}} {% endblock %}
+{% block title %}Accueil
+	{{parent()}}
+{% endblock %}
 
-{% block stylesheets %} 
-    <link rel="stylesheet" href="{{ asset ('assets/css/' )}}bootstrap.css" type="text/css">  
-    <link rel="stylesheet" href="assets/css/style-base.css" type="text/css"> 
-    <link rel="stylesheet" href="assets/css/style-indexOK.css" type="text/css"> 
+{% block stylesheets %}
+	<link rel="stylesheet" href="{{ asset ('assets/css/' )}}bootstrap.css" type="text/css">
+	<link rel="stylesheet" href="assets/css/style-base.css" type="text/css">
+	<link rel="stylesheet" href="assets/css/style-indexOK.css" type="text/css">
 {% endblock stylesheets  %}
 
 {% block body %}
 
-{# 
- {% for even in evens %}
-{{dump(even) }}
-{% endfor %} #}
+
+		 {# {% for even in evens %}
+		{{dump(even) }}
+		{% endfor %}  #}
+
+	<!-- DEBUT HEADER -->
+	<header>
+		<div class="container">
+			<div class="d-flex flex-row align-items-center container-header">
+
+				<div class="col-12 col-md-9 texte-welcome">
+					<p>Bienvenue
+						{% if app.user %}
+							{{ app.user.firstname }}</p>
+					{% endif %}
+					<h1>Votre Genialo’Frise</h1>
+				</div>
+
+				<div class="col-12 col-md-3">
+					<a href="{{ path('app_personal_even_new') }}" id="cardlinkmix">
+						<button type="button" class="btn-outline-lg-ajout">
+							<img src="assets/icones/icone-ajout-noir.svg" alt="icone ajouter">
+							J'ajoute un évènement
+						</button>
+					</a>
+					{% for user in  app.user.roles %}
+						{% if user == "ROLE_ADMIN" %}
+							<a href="{{ path('app_history_even_new') }}" id="cardlinkmix">
+								<button type="button" class="btn-outline-lg-ajout " id="btn-admin">
+									<img src="{{ asset('assets/icones/') }}icone-ajouter-blanc.svg" alt="icone ajouter">
+									J'ajoute un évènement historique
+								</button>
+							</a>
+
+						{% endif %}
+					{% endfor %}
 
 
-  <!-- DEBUT HEADER -->
-    <header>
-        <div class="container">
-            <div class="d-flex flex-row align-items-center container-header">
-               
-                <div class="col-12 col-md-9 texte-welcome">
-                
-                    <p>Bienvenue {% if app.user %}
-                     {{ app.user.firstname }}</p>
-                    {% endif %}
-                    <h1>Votre Genialo’Frise</h1>
-                </div>
-               
-                <div class="col-12 col-md-3">
-                <a href="{{ path('app_personal_even_new') }}"> 
-                    <button type="button" class="btn-outline-lg-ajout">
-                        <img src="{{ asset('assets/icones/') }}icone-ajout-noir.svg" alt="icone ajouter"> J'ajoute un évènement
-                    </button>
-                </a>
-                </div>
-            </div>
-        </div>
-    </header>
+				</div>
+			</div>
+		</div>
+	</header>
 
-    <main>
-        <!--Main la frise id=""-->
-        <a href="" id="lol"></a>
+	<main>
+		<!--Main la frise id=""-->
+		<a href="" id="lol"></a>
 
-        <div class="bloc-scroll">
-            {% for even in evens %}
-   {# {{ dump(even.evenHistorique) }}  #}
-                {% set foo = loop.index  %}
+		<div class="bloc-scroll">
+			{% for even in evens %}
+				{# {{ dump(even.evenHistorique) }}  #}
+				{% set foo = loop.index  %}
 
-                {% if  foo == 3 %} 
-                
-                <!--  FOCUS -->
-                <!--  FOCUS -->
-                <!--  FOCUS -->
-                <!--  FOCUS -->
-                <!--  FOCUS -->
+				{% if  foo == 3 %}
 
-                    <article class="card-event-focus">
-                        <a href="{{ path('app_history_even_show',{ id: even.evenHistorique.id }) }}">
-                            <section class="historic-event-focus">
-                                <div class="img-focus">
-                                    <img src="{{asset ('assets/images/') }}1980-histo.png" alt="album-thriller" class="img-histo-focus">
-                                </div>
-                                <div class="tag-focus">
-                                    <div class="title-focus">
-                                        <p class="event-title-1">{{ even.evenHistorique.title }}</p>
-                                    </div>
-                                </div>
-                            </section>
-                        </a>
+					<!--  FOCUS -->
+					<!--  FOCUS -->
+					<!--  FOCUS -->
+					<!--  FOCUS -->
+					<!--  FOCUS -->
 
-                            <section class="date">
-                                <div class="date-focus">
-                                    <span class="century">{{ even.date | slice(0,2) }}</span>
-                                    <span class="decade">{{ even.date | slice(2,4) }}</span>
-                                </div>
-                            </section>
-                        <a href="{{ path('app_personal_even_show',{ id: even.eventP[0].id }) }}"  id="cardlinkmix">
-                            <section class="personal-event-focus">
-                                <div class="tag-focus">
-                                    <div class="title-focus">
-                                        <p>{{ even.eventP[0].title }}</p>
-                                    </div>
-                                </div>
+						<article class="card-event-focus"> <a id="cardlinkmix" href="{{ path('app_history_even_show',{ id: even.evenHistorique.id }) }}">
+							<section class="historic-event-focus">
+								<div class="img-focus">
+									<img src="{{asset ('assets/images/') }}1980-histo.png" alt="album-thriller" class="img-histo-focus">
+								</div>
+								<div class="tag-focus">
+									<div class="title-focus">
+										<p class="event-title-1" >{{ even.evenHistorique.title | slice(0, 20) }}</p>
+									</div>
+								</div>
+							</section>
+						</a>
 
-                                <div class="personal-picture-focus">
-                                    <img src="assets/images/2020-historic-event-small.png" alt="pas-de-photo" class="img-perso-focus">
-                                    <div class="legend-perso-focus">
-                                        <p>{{ even.eventP[0].legend }}</p>
-                                    </div>
-                                </div>
-                            </section>
-                        </a>
-                    </article>
-            
+						<section class="date">
+							<div class="date-focus">
+								<span class="century">{{ even.date | slice(0,2) }}</span>
+								<span class="decade">{{ even.date | slice(2,4) }}</span>
+							</div>
+						</section>
+						<a href="{{ path('app_personal_even_show',{ id: even.eventP[0].id }) }}" id="cardlinkmix">
+							<section class="personal-event-focus">
+								<div class="tag-focus">
+									<div class="title-focus">
+										<p>{{ even.eventP[0].title | slice(0, 20)}}</p>
+									</div>
+								</div>
 
-                {% else %} 
-                
-                <!-- NON FOCUS -->
-                <!-- NON FOCUS -->
-                <!-- NON FOCUS -->
-                <!-- NON FOCUS -->
-                <!-- NON FOCUS -->
-                        <article class="card-event-nofocus ">
-                        {# {{ dump(even) }} #}
-                        <a href="{{ path('app_history_even_show',{ id: even.evenHistorique.id }) }}">
+								<div class="personal-picture-focus">
+									<img src="assets/images/2020-historic-event-small.png" alt="pas-de-photo" class="img-perso-focus">
+									<div class="legend-perso-focus">
+										<p>{{ even.eventP[0].legend | slice(0, 20)}}</p>
+									</div>
+								</div>
+							</section>
+						</a>
+					</article>
 
 
-                            <section class="historic-event">
-                                <div class="img-histo">
-                                    <img src="assets/images/2021-historic-event-small.png" alt="josephine-baker">
-                                </div>
-                                <div class="tag">
-                                    <div class="title">
-                                        <p class="event-title-1">{{ even.evenHistorique.title }}</p>
-                                    </div>
-                                </div>
-                            </section>
-                        </a>
+				{% else %}
 
-                            <img src="{{asset ('assets/images/') }}ligne-dates.svg" class="ligne-dots" alt="ligne">
+					<!-- NON FOCUS -->
+					<!-- NON FOCUS -->
+					<!-- NON FOCUS -->
+					<!-- NON FOCUS -->
+					<!-- NON FOCUS -->
+					<article class="card-event-nofocus "> 
+						<a href="{{ path('app_history_even_show',{ id: even.evenHistorique.id }) }}" id="cardlinkmix">
+							<section class="historic-event">
+								<div class="img-histo">
+									<img src="assets/images/2021-historic-event-small.png" alt="josephine-baker">
+								</div>
+								<div class="tag">
+									<div class="title">
+										<p class="event-title-1">{{ even.evenHistorique.title }}</p>
+									</div>
+								</div>
+							</section>
+						</a>
 
-                            <section class="date">
-                                <p>
-                                    <span class="century">{{ even.date | slice(0,2) }}</span>
-                                    <span class="decade">{{ even.date | slice(2,4) }}</span>
-                                </p>
-                            </section>
-                            
-                        <a href="{{ path('app_personal_even_show',{ id: even.eventP[0].id }) }}" id="cardlinkmix">
+						<img src="{{asset ('assets/images/') }}ligne-dates.svg" class="ligne-dots" alt="ligne">
 
-                            <img src="{{asset ('assets/images/') }}ligne-dates.svg" class="ligne-dots" alt="ligne">
-
-
-                            <section class="personal-event">
-                                <div class="tag">
-                                    <div class="title">
-                                        <p>{{ even.eventP[0].title }}</p>
-                                    </div>
-                                </div>
-
-                                <div class="personal-picture">
-                                    <img src="{{asset ('assets/images/') }}1976-personal-event-small.jpg" alt="pemis-bateau">
-                                    <div>
-                                        <p>{{ even.eventP[0].legend }}</p>
-                                    </div>
-                                </div>
-                            </section>  
-                        </a>
-
-                        </article>                
-                {% endif %}
-            {% endfor %}
-        </div>
+						<section class="date">
+							<p>
+								<span class="century">{{ even.date | slice(0,2) }}</span>
+								<span class="decade">{{ even.date | slice(2,4) }}</span>
+							</p>
+						</section>
 
 
-    </main>
+							<img src="{{asset ('assets/images/') }}ligne-dates.svg" class="ligne-dots" alt="ligne">
+
+						<a href="{{ path('app_personal_even_show',{ id: even.eventP[0].id }) }}" id="cardlinkmix">
+							<section class="personal-event">
+								<div class="tag">
+									<div class="title">
+										<p>{{ even.eventP[0].title }}</p>
+									</div>
+								</div>
+
+								<div class="personal-picture">
+									<img src="{{asset ('assets/images/') }}1976-personal-event-small.jpg" alt="pemis-bateau">
+									<div>
+										<p>{{ even.eventP[0].legend }}</p>
+									</div>
+								</div>
+							</section>
+						</a>
+
+					</article>
+				{% endif %}
+			{% endfor %}
+		</div>
+
+
+	</main>
 
 
 {% endblock body %}
-

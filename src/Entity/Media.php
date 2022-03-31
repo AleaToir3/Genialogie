@@ -22,11 +22,11 @@ class Media
     
     /**
      * @ORM\ManyToOne(targetEntity=PersonalEven::class, inversedBy="media")
-     */  
+     */
     private $personalEven;
 
     /**
-     * @ORM\OneToMany(targetEntity=Picture::class, mappedBy="media")
+     * @ORM\OneToMany(targetEntity=Picture::class, mappedBy="media",cascade={"persist"})
      */
     private $picture;
 

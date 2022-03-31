@@ -1,34 +1,54 @@
- {% extends "base.html.twig" %}
-{% block title %} {{parent()}} | Connection  {% endblock %}
+{% extends "base.html.twig" %}
+
+{% block title %}
+	{{parent()}}
+	| Créer un compte
+{% endblock %}
+
 {% block stylesheets %}
-   
+	<link rel="stylesheet" href="{{ asset ('assets/css/boostrap.css' ) }}" type="text/css">
+	<link rel="stylesheet" href="{{ asset ('assets/css/inscriptionOK.css' ) }}" type="text/css">
+	<link rel="stylesheet" href="assets/css/style-landingOK.css">
+
+
 {% endblock stylesheets %}
-
 {% block body %}
-<form method="post">
-    {% if error %}
-        <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
-    {% endif %}
+	<form method="post">
+		{% if error %}
+			<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+		{% endif %}
 
-    {% if app.user %}
-        <div class="mb-3">
-           Bonjour {{ app.user.username }}, <a href="{{ path('app_logout') }}">Deconnection</a>
-        </div>
-    {% endif %}
+		{% if app.user %}
+			<div class="mb-3">
+				Bonjour
+				{{ app.user.username }},
+				<a href="{{ path('app_logout') }}">Deconnection</a>
+			</div>
+		{% endif %}
+		<div class="container">
+			<div class="container-fluid bloc-logo-h1 d-flex flex-row flex-nowrap justify-content-center">
+				<div class="container bloc-logo d-flex align-items-center justify-content-center ">
+					<img src="assets/icones/logo-orange.svg" alt="logo"  id="login-img">
+				</div>
+				<div class="container title">
+					<h1>Veuillez vous connecter</h1>
+				</div>
+			</div>
 
-    <h1 class="h3 mb-3 font-weight-normal">Veuillez vous logger</h1>
-    <label for="inputEmail">Email</label>
-    <input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+			<div class="container bloc-inputs">
 
-    <label for="inputPassword">Password</label>
-    <input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
-    <input type="hidden" name="_csrf_token"
-           value="{{ csrf_token('authenticate') }}">
-    <button class="btn btn-lg btn-primary" type="submit">
-        Connection
-    </button>
-        <a href="{{ path('app_register') }}"><button type="button" class="btn-cta-full-subscribe">J'ai pas de compte m'inscrire</button></a>
-        <a href="{{ path('Home') }}">Retour a l'accueil</a>
-
-</form>
-{% endblock body %}
+				<label for="inputEmail">Email</label>
+				<input type="email" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" autocomplete="email" required autofocus>
+				<label for="inputPassword">Password</label>
+				<input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+				<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+				<div class="container bloc-cta d-flex flex-row justify-content-around">
+					<button type="submit" class="btn-cta-full-connect">Connexion</button>
+					<a href="{{ path('app_register') }}">
+						<button type="button" class="btn-cta-full-subscribe">Inscription</button>
+					</a>
+				</div>
+			</div>
+		</div>
+		</form>
+	{% endblock body %}

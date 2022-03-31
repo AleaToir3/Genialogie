@@ -1,9 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}
-	{{ parent() }}
-	Personnel
-{% endblock title %}
+{% block title %}	{{ parent() }} | Evenement personnel {% endblock title %}
 
 {% block stylesheets %}
 	<link rel="stylesheet" href="{{ asset ('assets/css/bootstrap.css') }}">
@@ -16,10 +13,9 @@
 	{# {{ dump(personal_even) }} #}
 
 	<!-- icone fermer -->
-		<div class="close"> <a href="{{ path ('Home') }}">
-			<img src="{{ asset ('assets/icones/') }}icone-fermer-noir.svg" alt="fermer">
-		</a>
-	</div>
+		<div class="close">
+			<a href="{{ path ('Home') }}"><img src="{{ asset ('assets/icones/') }}icone-fermer-noir.svg" alt="fermer"></a>
+		</div>
 	<!-- icone fermer -->
 	<div id="popup-perso-1979">
 		<artcicle
@@ -32,7 +28,6 @@
 				</div>
 				<div
 					class="col-xl-10 col-xxl-8">
-					{# <img class="img-fluid img-cover-event" src="{{ asset ('/assets/icones/') }}1979-perso-cover.jpg" #}
 					<img class="img-fluid img-cover-event" src="{{ asset ('/assets/images/') }}1979-perso-cover.jpg" alt="">
 				</div>
 
@@ -82,7 +77,8 @@
 								<a href="#">
 									<!-- balise audio à ajouter où ?? -->
 									<!-- ici, pour écouter le morceau il faut du JS -->
-									<img id="play" class="icone-player play" src="{{ asset ('/assets/icones/') }}icone-audio-play-filet.svg" alt="icon audio play"> <img id="pause" class="icone-player pause" src="{{ asset ('/assets/icones/') }}icone-audio-pause-filet.svg" alt="">
+									<img id="play" class="icone-player play" src="{{ asset ('/assets/icones/') }}icone-audio-play-filet.svg" alt="icon audio play">
+									<img id="pause" class="icone-player pause" src="{{ asset ('/assets/icones/') }}icone-audio-pause-filet.svg" alt="">
 								</a>
 
 
@@ -118,7 +114,6 @@
 
 			<div class="swipe">
 				<a href="{{ path('Home') }}">
-
 				<img src="{{ asset ('/assets/icones/') }}icone-chevron-gauche.svg" alt="vers page historique">
 				</a>
 			</div>
@@ -148,12 +143,11 @@
 
 			<!-- 4EME TRANCHE -->
 			<div class="container-img-event">
-				<img src="{{ asset ('assets/images/') }}1979-perso-diapo1.jpg" alt="Brigitte jeune">
-				<img src="{{ asset ('/assets/images/') }}1979-perso-diapo2.jpg" alt="Bébé dans une poussette">
-				<img src="{{ asset ('/assets/images/') }}1979-perso-diapo3.jpg" alt="Un couple sous le parapluie">
-				<img src="{{ asset ('/assets/images/') }}1979-perso-diapo4.jpg" alt="Brigitte danse come une folle">
-
-
+			{% if personal_even.media[0].picture is defined %}
+				{% for img in personal_even.media[0].picture %}
+					<img src="{{asset ('assets/images/uploads/') ~ img.picture }}" alt="" srcset="">
+				{% endfor %}
+			{% endif %}
 			</div>
 
 
@@ -167,5 +161,9 @@
 			{# POUR LE FUTUR            #}
 			<a href="{{ path('Home') }}">Retour a la list</a>
 
+			{# <img src="{{asset ('assets/images/uploads/') ~ personal_even.media[0].picture[0].picture}}" alt="" srcset=""> #}
 
-		{% endblock body %}
+
+
+
+{% endblock body %}

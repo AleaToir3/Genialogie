@@ -1,6 +1,9 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}	{{ parent() }} | historique {% endblock title %}
+{% block title %}
+	{{ parent() }}
+	| historique
+{% endblock title %}
 
 {% block stylesheets %}
 	<link rel="stylesheet" href="{{ asset ('assets/css/bootstrap.css') }}">
@@ -10,137 +13,138 @@
 
 {% block body %}
 
-    <div id="popup-perso-1979">
-        <artcicle class="container-fluid">
-    
-            <!-- 1ERE TRANCHE - photo de cover -->
-            <div class="row container-cover">
-                <div class="col-xl-1 col-xxl-2">
-            <div class="header-right container d-flex justify-content-start">
-                <span class="icone-fermer"><a href="{{ path ('Home') }}" ><img src="{{ asset ('assets/icones/') }}icone-fermer-noir.svg"  alt="Close"></a></span>
-            </div>
-                    <!-- div vide -->
-                </div>
-                <div class="col-xl-10 col-xxl-8">
-                    <img class="img-fluid img-cover-event hero-shot" src="{{ asset('assets/images/') }}1976-histo.png"
-                        alt="Le premier marathon de Paris">
-                </div>
+	<div id="popup-perso-1979">
+		<artcicle
+			class="container-fluid">
 
-                <div class="col-xl-1 col-xxl-2">
-                    <!-- div vide -->
-                </div>
-            </div>
+			<!-- 1ERE TRANCHE - photo de cover -->
+			<div class="row container-cover">
+				<div class="col-xl-1 col-xxl-2">
+					<div class="header-right container d-flex justify-content-start">
+						<span class="icone-fermer">
+							<a href="{{ path ('Home') }}"><img src="{{ asset ('assets/icones/') }}icone-fermer-noir.svg" alt="Close"></a>
+						</span>
+					</div>
+					<!-- div vide -->
+				</div>
+				<div class="col-xl-10 col-xxl-8">
+					<img class="img-fluid img-cover-event hero-shot" src="{{ asset('assets/images/') }}1976-histo.png" alt="Le premier marathon de Paris">
+				</div>
 
-            <!-- 2EME icone histoire titre année-->
-            <div class="row article-header">
-                <div class="col-12 col-md-1 col-xl-1 col-xxl-2">
-                    <!-- div vide -->
-                </div>
+				<div
+					class="col-xl-1 col-xxl-2"><!-- div vide -->
+				</div>
+			</div>
 
-                <div class="col-12 col-md-11 col-xl-7 col-xxl-5">
-                    <div class="row align-items-center title-and-icon">
-                        <div class="col-2">
-                            <div class="box-border-radius">
-                                <img class="icon-100" src="{{ asset('assets/icones/') }}icone-histo.svg" alt="pastille histoire">
-                            </div>
-                        </div>
-                        <div class="col-10 border-left-histo">
-                            <h2>{{ history_even.title }}</h2>
-                            <p class="date-event">
-                            <span class="number-small">{{  history_even.date | date('Y') | slice(0,2)  }}</span>
-                            <span class="number-big">{{  history_even.date | date('Y') | slice(2,4)  }}</span>
-                            </p>
-                        </div>
-                    </div>
-                </div>
+			<!-- 2EME icone histoire titre année-->
+			<div class="row article-header">
+				<div
+					class="col-12 col-md-1 col-xl-1 col-xxl-2"><!-- div vide -->
+				</div>
 
-                <!-- ici, div vide, pour garder la même structure que sur la page POP UP PERSO. -->
-                <div class="col-12 col-md-12 col-xl-3 col-xxl-3 ">
-                    <!-- ceci est un div vide -->
-                </div>
+				<div class="col-12 col-md-11 col-xl-7 col-xxl-5">
+					<div class="row align-items-center title-and-icon">
+						<div class="col-2">
+							<div class="box-border-radius">
+								<img class="icon-100" src="{{ asset('assets/icones/') }}icone-histo.svg" alt="pastille histoire">
+							</div>
+						</div>
+						<div class="col-10 border-left-histo">
+							<h2>{{ history_even.title }}</h2>
+							<p class="date-event">
+								<span class="number-small">{{  history_even.date | date('Y') | slice(0,2)  }}</span>
+								<span class="number-big">{{  history_even.date | date('Y') | slice(2,4)  }}</span>
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- ici, div vide, pour garder la même structure que sur la page POP UP PERSO. -->
+				<div
+					class="col-12 col-md-12 col-xl-3 col-xxl-3 "><!-- ceci est un div vide -->
+				</div>
 
 
-                <div class="col-12 col-md-12 col-xl-1 col-xxl-2">
-                    <!-- div vide -->
-                </div>
+				<div
+					class="col-12 col-md-12 col-xl-1 col-xxl-2"><!-- div vide -->
+				</div>
 
-            </div>
-            <!-- FIN 2EME icone histoire titre année-->
+			</div>
+			<!-- FIN 2EME icone histoire titre année-->
 
-            <div class="swipe">
-            	<a href="{{ path('Home') }}">
-                  <img src="{{ asset('assets/icones/') }}icone-chevron-gauche.svg" alt="vers page historique">
+			<div class="swipe">
+				<a href="{{ path('Home') }}">
+					<img src="{{ asset('assets/icones/') }}icone-chevron-gauche.svg" alt="vers page historique">
 				</a>
-            </div>
+			</div>
 
-            <!-- 3EME titre texte-->
-            <div class="row story">
-                <div class="col-12 col-md-2">
-                    <!-- ceci est un div vide -->
+			<!-- 3EME titre texte-->
+			<div class="row story">
+				<div
+					class="col-12 col-md-2"><!-- ceci est un div vide -->
 
-                </div>
+				</div>
 
-                <div class="col-12 col-md-6">
-                    <h5>Paris refait son sport</h5>
-                    <p class="p-story">
-                    {{ history_even.description }}
-                    </p>
+				<div class="col-12 col-md-6">
+					<h5>Paris refait son sport</h5>
+					<p class="p-story">
+						{{ history_even.description }}
+					</p>
 
-                </div>
+				</div>
 
-                <div class="col-12 col-md-4">
+				<div
+					class="col-12 col-md-4"><!-- ceci est un div vide -->
 
-                    <!-- ceci est un div vide -->
+				</div>
 
-                </div>
+			</div>
 
-            </div>
+			<div class="row">
+				<div
+					class="col-12 col-md-2"><!-- ceci est un div vide -->
 
-            <div class="row">
-                <div class="col-12 col-md-2">
-                    <!-- ceci est un div vide -->
+				</div>
+				<!-- fin 3EME titre texte-->
 
-                </div>
-             <!-- fin 3EME titre texte-->
+				<!-- bouton en savoir plus  -->
+				<div class="col-12 col-md-6">
 
-                <!-- bouton en savoir plus  -->
-                <div class="col-12 col-md-6">
+					<a href="https://www.evous.fr/Marathon-de-Paris-tous-les-resultats-et-les-gagnants.html">
+						<button type="button" class="btn-cta-full">En savoir plus</button>
+					</a>
 
-                    <a href="https://www.evous.fr/Marathon-de-Paris-tous-les-resultats-et-les-gagnants.html">
-                        <button type="button" class="btn-cta-full">En savoir plus</button>
-                    </a>
+					<!--FIN bouton en savoir plus  -->
 
-                 <!--FIN bouton en savoir plus  -->
+					<!-- sources  -->
 
-                  <!-- sources  -->
+					<p class="source">lemonde.fr - msn - csf-bouillot image copyrights</p>
 
-                    <p class="source">lemonde.fr - msn - csf-bouillot image copyrights</p>
-        
-                </div>
+				</div>
 
-                <div class="col-12 col-md-4">
+				<div
+					class="col-12 col-md-4"><!-- ceci est un div vide -->
 
-                    <!-- ceci est un div vide -->
+				</div>
 
-                </div>
+			</div>
 
-            </div>
-            
-            
-	{% for user in  app.user.roles %}
-		{% if user == "ROLE_ADMIN" %}
-			<a href="{{ path('app_history_even_edit', {'id': history_even.id}) }}">Editer</a>
-			{{ include('history_even/_delete_form.html.twig') }}
-		{% endif %}
-	{% endfor %}
 
-	{# POUR LE FUTUR            #}
-	<a href="{{ path('Home') }}">Retour a la list</a>
+			{% for user in  app.user.roles %}
+				{% if user == "ROLE_ADMIN" %}
+					<a href="{{ path('app_history_even_edit', {'id': history_even.id}) }}">Editer</a>
+					{{ include('history_even/_delete_form.html.twig') }}
+				{% endif %}
+			{% endfor %}
 
-        </artcicle>
-    </div>
+			{# POUR LE FUTUR            #}
+			<a href="{{ path('Home') }}">Retour a la list</a>
 
-    <!-- 4EME bouton-->
+		</artcicle>
+	</div>
+
+	<!-- 4EME bouton-->
 
 
 {% endblock body %}
+

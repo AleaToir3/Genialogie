@@ -50,7 +50,7 @@ class PersonalEven
     private $frise;
 
     /**
-     * @ORM\OneToMany(targetEntity=Media::class, mappedBy="personalEven")
+     * @ORM\OneToMany(targetEntity=Media::class, mappedBy="personalEven",cascade={"persist"},fetch="EAGER")
      */
     private $media;
 

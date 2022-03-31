@@ -9,6 +9,7 @@
     E MODALES--------------------426
         E1 AJOUT EVENEMENT
         E2 VISUALISATION EVENEMENT
+ */
 
 /* A TYPOGRAPHIE ET COULEURS */
 /*TYPOGRAPHIES DU SITE COMPLET*/
@@ -98,7 +99,8 @@ body{
 }
 .header-right a{
     text-decoration: none;
-    font-family: "work-regular";
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
     font-size: 1.5rem;
     color: var(--black)
 }
@@ -116,11 +118,15 @@ body{
     width: 40vw;
     margin-left: 1.5rem;
 }
+.info-dropdown{
+    font-size: 1rem;
+}
 
 .dropdown-toggle{
     background-color: white;
     color:var(--black);
-    font-family: "work-regular";
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
     font-size: 1.5rem;
     border-radius: 40px;
     border-style: none;
@@ -129,6 +135,7 @@ body{
     height:6vh;
     text-align: left;
 }
+
 .btn-secondary:hover{
     color:var(--orange);
     background-color: white;
@@ -138,40 +145,47 @@ body{
     width: 35vw;
 }
 .dropdown-menu{
-    background-color: white;
+    background-color: var(--ecru);
     border-radius: 40px;
     border-style: none;
-}
-.dropdown ul li img {
-    width:8vw;
-    height:8vh;
-    padding:1rem;
-    color: var(--orange);
+    background-color: white;
 }
 
+.dropdown ul li img {
+    width:7vw;
+    height:7vh;
+    padding:1rem;
+    border-radius: 40px;
+    border-radius: 50px;
+    background-color: var(--brown);
+}
+
+
 /*AUTRES INPUTS*/
-#date-area {
+.date-area {
     border-radius: 40px;
     width: 20vw;
     height:6vh;
     border-style: none;
     margin-top: 5rem;
 }
-#title-area {
+.title-area {
     border-radius: 40px;
     width: 35vw;
     height:6vh;
-    font-family: "work-regular";
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
     font-size: 1,5em;
     color: #36363650;
     border-style: none;
     margin-top: 2rem;
 }
-#legend-area {
+.legend-area {
     border-radius: 40px;
     width: 35vw;
     height:6vh;
-    font-family: "work-regular";
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
     font-size: 1,5em;
     color: #36363650;
     border-style: none;
@@ -179,8 +193,9 @@ body{
 }
 /*PLACEHOLDER DES INPUTS TXT*/
 input::placeholder{
-    color: black;
-    font-family: "work-regular";
+    color: #929292;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
     font-size: 1.5rem;
 }
 
@@ -195,7 +210,8 @@ input::placeholder{
 .txt-gauge {
     width:50vw;
     border-radius: 40px;
-    font-family: "work-regular";
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
     font-size: 1.5rem;
     margin-top: 1.4rem;
 }
@@ -203,6 +219,18 @@ input::placeholder{
     color: var(--orange);
 }
 /*PARTIE JAUGE BLOC EMOTIONS*/
+/*Sélection des emotions*/
+.dropdown-item{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+}
+.dropdown-item.active{
+    background-color: white;
+    color: var(--black);
+}
+/*mise en page des icones*/
 .bloc-emotion{
     width:50vw;
     height: 18vh;
@@ -210,23 +238,74 @@ input::placeholder{
     border-radius: 40px;
 }
 .card-emotion{
-    width: 40vw;
+    width: 30vw;
+    height:10vh;
+    text-align: center;
+    margin-top: 2rem;
 }
-.bloc-emotion img{
-    width:7.5vw;
-    height:7.5vh;
-    padding-bottom: 1rem;
-}
-.bloc-emotion img p{
-    font-family: "work-regular";
+.bloc-emotion p{
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
     font-size: 1.5rem;
+    margin-top: 1rem;
+    border-top: var(--black) solid;
 }
-.bloc-emotion a{
-    text-decoration: none;
-    color:var(--black);
+/*selection d'une émotion - bouton radio*/
+.card-emotion > input[type=radio] {
+    display: none;
 }
-.border-card{
-    border-bottom: 0.1rem solid;
+.card-emotion > input[type=radio]:checked + label {
+   background-color: white;
+   border-radius: 40px;
+   padding:1rem;
+}
+
+i.icon {
+   display: block;
+   width: 52px;
+   height: 52px;
+}
+
+i.icon-emotion-peur {
+   background: url('../icones/emo-peur-defaut.svg');
+}
+.card-emotion > input[type=radio]:checked + label > i.icon-emotion-peur {
+   background: url('../icones/emo-peur-select.svg');
+}
+
+i.icon-emotion-passion {
+   background: url('../icones/emo-passion-defaut.svg');
+}
+.card-emotion > input[type=radio]:checked + label > i.icon-emotion-passion {
+   background: url('../icones/emo-passion-select.svg');
+}
+
+i.icon-emotion-amour {
+   background: url('../icones/emo-amour-defaut.svg');
+}
+.card-emotion > input[type=radio]:checked + label > i.icon-emotion-amour {
+   background: url('../icones/emo-amour-select.svg');
+}
+
+i.icon-emotion-joie {
+   background: url('../icones/emo-joie-defaut.svg');
+}
+.card-emotion > input[type=radio]:checked + label > i.icon-emotion-joie {
+   background: url('../icones/emo-joie-select.svg');
+}
+
+i.icon-emotion-surprise {
+   background: url('../icones/emo-surprise-defaut.svg');
+}
+.card-emotion > input[type=radio]:checked + label > i.icon-emotion-surprise {
+   background: url('../icones/emo-surprise-select.svg');
+}
+
+i.icon-emotion-tristesse {
+   background: url('../icones/emo-triste-defaut.svg');
+}
+.card-emotion > input[type=radio]:checked + label > i.icon-emotion-tristesse {
+   background: url('../icones/emo-triste-select.svg');
 }
 
 /*PARTIE TEXTE DESCRIPTIF*/
@@ -234,7 +313,8 @@ input::placeholder{
     border-radius: 40px;
     width:97vw;
     height: 332px;
-    font-family: "work-regular";
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
     font-size: 1.5em;
     color: #36363650;
     border-style: none;
@@ -265,7 +345,8 @@ input::placeholder{
     border-radius: 25px 25px 0px 0px;
 }
 .card-text{
-    font-family: "work-regular";
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
     font-size: 1.5rem;
     text-align: center;
     color:var(--black);
@@ -290,25 +371,27 @@ input::placeholder{
     height:30vh;
     margin: 0rem 1rem 0rem 1rem;
     border-radius: 40px;
+        object-fit: cover;
 }
 
 
 /* TOGGLE PUBLIC */
 .public-toggle{
-    font-family: "work-regular";
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
     font-size: 1.5rem;
     color:var(--black);
     margin-top: 5rem;
     margin-left: 1.5rem;
 }
 /*frame du toggle entier*/
-input[type=checkbox]{
+ input[type=checkbox]{
 	height: 0;
 	width: 0;
 	visibility: hidden;
 }
 /*frame du fond du toggle*/
-label {
+label[for=switch] {
 	cursor: pointer;
 	text-indent: -9999px;
 	width: 100px;
@@ -319,7 +402,7 @@ label {
 	position: relative;
 }
 /*position du pointeur dans le toggle*/
-label:after {
+label[for=switch]:after {
 	content: '';
 	position: absolute;
 	top: 4px;
@@ -329,20 +412,20 @@ label:after {
 	background: #fff;
 	border-radius: 90px;
 	transition: 0.3s;
-}
+} 
 
-input:checked + label {
+input[type=checkbox]:checked + label[for=switch] {
 	background: var(--green);
 }
 
-input:checked + label:after {
+input[type=checkbox]:checked + label[for=switch]:after {
 	left: calc(100% - 5px);
 	transform: translateX(-100%);
 }
 
-label:active:after {
+input[type=checkbox] + label[for=switch]:active:after {
 	width: 130px;
-}
+} */
 
 
 /*PARTIE BOUTONS APERCU ET PUBLIER*/
@@ -350,7 +433,8 @@ label:active:after {
     margin: 4rem 0rem 4rem 0rem;
 }
 .btn-hover-full-outline{
-    font-family: "work-regular";
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
     font-size: 1.5rem;
     background-color: white ;
     border-style: solid var(--black);
@@ -361,7 +445,8 @@ label:active:after {
 }
 
 .btn-cta-full{
-    font-family: "work-regular";
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
     font-size: 1.5rem;
     background-color: var(--black);
     border-style: solid var(--black);

@@ -5,7 +5,7 @@
 {% block stylesheets %}
     <link rel="stylesheet" href="{{ asset ('assets/css/boostrap.css' ) }}" type="text/css">  
     <link rel="stylesheet" href="{{ asset ('assets/css/inscriptionOK.css' ) }}" type="text/css">  
-  
+
 {% endblock stylesheets %}
 
 {% block body %}
@@ -27,28 +27,18 @@
         {{ form_widget(registrationForm.firstname, {'attr':{'placeholder': 'Prenom','class' : 'title-area'}}) }}
         {{ form_widget(registrationForm.birthday, {'attr':{'class' : 'date-area'}}) }}
         {{ form_row(registrationForm.email,{'attr':{'placeholder': 'Email','class' : 'title-area'}}) }}
-        {# {{ form_widget(registrationForm.plainPassword, {'attr':{'placeholder': 'Password','class' : 'title-area'}}) }} #}
-        {# {{ form_widget(registrationForm.password_confirm, {'attr':{'placeholder': 'Confirme password','class' : 'title-area'}}) }} #}
         {{ form_row(registrationForm.plainPassword.first, {'attr':{'placeholder': 'Entré un mot de passe','class' : 'title-area'}}) }}
         {{ form_row(registrationForm.plainPassword.second, {'attr':{'placeholder': 'Confirmez le mot de passe','class' : 'title-area'}}) }}
     </div>
 </div>
 
-{# <div class="container-fluid bloc-checkbox-cta d-flex flex-row align-items-center">
-    <div class="container-check d-flex flex-row justify-content-evenly"> #}
-                {# {{ form_widget(registrationForm.agreeTerms) }} #}
-                {# {{ form_widget(registrationForm.agreeTerms,{'attr':{'class' : 'form-check-input'}}) }}J'ai lu et accepte sans réserve les<a href="#"> Conditions Générales d'Utilisation</a> du site. #}
-        {# </label>
-    </div> #}
-
-
 {# ----------------- #}
     <div class="container-fluid bloc-checkbox-cta d-flex flex-row align-items-center">
         <div class="container-check d-flex flex-row justify-content-evenly">
             <label class="form-check-label" for="flexCheckChecked">
-            {{ form_widget(registrationForm.agreeTerms) }}
-            J'ai lu et accepte sans réserve les 
-            <a href="#"> Conditions Générales d'Utilisation</a> du site.
+                {{ form_widget(registrationForm.agreeTerms) }}
+                J'ai lu et accepte sans réserve les 
+                <a href="#"> Conditions Générales d'Utilisation</a> du site.
             </label>
             <div class="container button-container">
                 <button type="submit" class="btn-cta-full">Je me lance !</button>
@@ -58,12 +48,7 @@
     </div>
 
     <a href="{{ path('app_login') }}">J'ai deja un compte je me  connecter</a>
-    <br>
     <a href="{{ path('Home') }}">Retour a l'accueil</a>
-
-
-
-
 
 
 <!-- Lien javascript -->

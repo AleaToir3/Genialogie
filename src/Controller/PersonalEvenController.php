@@ -2,17 +2,19 @@
 
 namespace App\Controller;
 
+use App\Entity\Media;
 use App\Entity\PersonalEven;
+use App\Entity\Picture;
 use App\Form\PersonalEvenType;
-use App\Repository\PersonalEvenRepository;
 
 use App\Repository\HistoryEvenRepository;
 
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Repository\PersonalEvenRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
  * @Route("/personal/even")
@@ -25,11 +27,36 @@ class PersonalEvenController extends AbstractController
     public function new(Request $request, PersonalEvenRepository $personalEvenRepository): Response
     {
         $personalEven = new PersonalEven();
+
+        $media = new Media();
+
+        $personalEven->addMedium($media);
+
+
         $form = $this->createForm(PersonalEvenType::class, $personalEven);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+            $images = $form->get('images')->getData();
+            foreach ($images as $image) {
+
+                // nouveau nom de fichier pour eviter les doublons
+                $fichier = md5(uniqid()) . '.' . $image->guessExtension();
+                $image->move(
+                    //va chercher le dossier en fonction cfg dans le service.yamel
+                    $this->getParameter('images_directory'),
+                    $fichier
+                );
+
+                // envoie l'image dans la BDD
+                $img = new Picture();
+                $img->setPicture($fichier);
+                $media->addPicture($img);
+            }
+
+
             $personalEvenRepository->add($personalEven);
+
             return $this->redirectToRoute('Home', [], Response::HTTP_SEE_OTHER);
         }
 
@@ -45,7 +72,6 @@ class PersonalEvenController extends AbstractController
     public function show(PersonalEven $personalEven): Response
     {
 
-        // dd($personalEven->getMedia());
         return $this->render('personal_even/show.html.twig', [
             'personal_even' => $personalEven,
         ]);
@@ -66,7 +92,7 @@ class PersonalEvenController extends AbstractController
 
         return $this->renderForm('personal_even/edit.html.twig', [
             'personal_even' => $personalEven,
-            'form' => $form, 
+            'form' => $form,
         ]);
     }
 
@@ -75,11 +101,11 @@ class PersonalEvenController extends AbstractController
      */
     public function delete(Request $request, PersonalEven $personalEven, PersonalEvenRepository $personalEvenRepository): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$personalEven->getId(), $request->request->get('_token'))) {
+
+        if ($this->isCsrfTokenValid('delete' . $personalEven->getId(), $request->request->get('_token'))) {
             $personalEvenRepository->remove($personalEven);
         }
 
         return $this->redirectToRoute('Home', [], Response::HTTP_SEE_OTHER);
     }
 }
-
