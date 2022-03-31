@@ -321,7 +321,18 @@ i.icon-emotion-tristesse {
     margin-top: 2%;
     margin-left: 1.5rem;
 }
-
+#personal_even_description{
+    border-radius: 40px;
+    width:97vw;
+    height: 332px;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+    font-size: 1.5em;
+    color: #36363650;
+    border-style: none;
+    margin-top: 2%;
+    margin-left: 1.5rem;   
+}
 
 /*PARTIE ADD MEDIA*/
 .bloc-add-media{
@@ -391,7 +402,7 @@ i.icon-emotion-tristesse {
 	visibility: hidden;
 }
 /*frame du fond du toggle*/
-label[for=switch] {
+label[for=personal_even_isPrivatee] {
 	cursor: pointer;
 	text-indent: -9999px;
 	width: 100px;
@@ -402,7 +413,7 @@ label[for=switch] {
 	position: relative;
 }
 /*position du pointeur dans le toggle*/
-label[for=switch]:after {
+label[for=personal_even_isPrivatee]:after {
 	content: '';
 	position: absolute;
 	top: 4px;
@@ -414,16 +425,16 @@ label[for=switch]:after {
 	transition: 0.3s;
 } 
 
-input[type=checkbox]:checked + label[for=switch] {
+input[type=checkbox]:checked + label[for=personal_even_isPrivatee] {
 	background: var(--green);
 }
 
-input[type=checkbox]:checked + label[for=switch]:after {
+input[type=checkbox]:checked + label[for=personal_even_isPrivatee]:after {
 	left: calc(100% - 5px);
 	transform: translateX(-100%);
 }
 
-input[type=checkbox] + label[for=switch]:active:after {
+input[type=checkbox] + label[for=personal_even_isPrivatee]:active:after {
 	width: 130px;
 } */
 
@@ -453,4 +464,8 @@ input[type=checkbox] + label[for=switch]:active:after {
     color: white;
     width: 20vw;
     height:8vh;
+}
+
+.imagess{
+    visibility: hidden;
 }

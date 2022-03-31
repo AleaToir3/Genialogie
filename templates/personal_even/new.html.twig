@@ -1,3 +1,4 @@
+
 {% extends 'base.html.twig' %}
 
 {% block title %}
@@ -11,6 +12,11 @@
 {% endblock stylesheets %}
 
 {% block body %}
+
+
+
+{{ form_start (form) }}
+
 
 <!-- Liste inputs -->
 <div class="container-fluid d-flex flex-row flex-nowrap">
@@ -43,15 +49,16 @@
 
 <!-- autres champs saisie -->
         <div id="input-date">
-            <input class="date-area" type="date" placeholder="Date de l'évènement *" value="01-2022" min="01-1950" max="12/2022" label="Date">
+            {{ form_widget(form.date, { 'attr': {'placeholder': 'Date de l\'évènement *','class': 'date-area','label': 'Date'} }) }}
+
+            {# <input id="date" name="date" class="date-area" type="date" placeholder="Date de l'évènement *" value="01-2022" min="01-1950" max="12/2022" label="Date"> #}
         </div>
         <div id="input-title">
-{#            {{ form_widget(form.images, { 'attr': {'placeholder': 'calendar'} }) }}#}
-
-            <input class="title-area" type="text" name="title" placeholder="Je choisis un titre à mon évènement *">
+           {{ form_widget(form.title, { 'attr': {'placeholder': 'Je choisis un titre à mon évènement *','class': 'title-area'} }) }}
+            {# <input id="title" name="title" class="title-area" type="text"  placeholder="Je choisis un titre à mon évènement *"> #}
         </div>
         <div id="input-txt">
-            <input class="legend-area" type="text" placeholder="Je choisis une légende à mon évènement" name="legend" required maxlength="23">
+            {{ form_widget(form.legend, { 'attr': {'placeholder': 'Je choisis une légende à mon évènement','class': 'legend-area'} }) }}
         </div>
     </section>
     
@@ -65,7 +72,7 @@
         </div>
 
         <div class="bloc-emotion">
-            <form class="d-flex flex-row flex-nowrap align-items-center justify-content-center">
+            <div class="d-flex flex-row flex-nowrap align-items-center justify-content-center">
                 <div class="card-emotion"> 
                     <input type="radio" name="emotion" id="emotion-peur" value="peur">
                     <label for="emotion-peur" class="d-flex flex-column flex-nowrap align-items-center">
@@ -113,7 +120,7 @@
                     <p>Tristesse</p>
                 </label>
                 </div>
-            </form>
+            </div>
 
         </div>
     </section>
@@ -122,7 +129,9 @@
 <!-- espace descriptif event -->
 <div class="bloc-txt container-fluid">
     <section class="event-text">    
-        <input type="text" id="text-area-event" name="event-text" placeholder="Je décris mon évènement">
+        {{ form_widget(form.description, { 'attr': {'placeholder': 'Je décris mon évènement','class': 'description'} }) }}
+
+        {# <input id="description" name="description" type="text" name="event-text" placeholder="Je décris mon évènement"> #}
     </section>
 </div>
              
@@ -140,13 +149,19 @@
         </div>
 
         <div class="card-media">
-        <a href="#">	
-            <div class="card-body d-flex flex-column justify-content-center">
-            </div>
-            <div class="icone-card-media d-flex justify-content-center">
-                <img src="{{asset ('assets/icones')}}/icone-photo-ajout-blanc.svg" alt="Ajout photos">
-            </div>
-        </a>
+        	
+            <label for="images">
+                <div class="card-body d-flex flex-column justify-content-center">
+                <input type="file" id="images" name="images" style="visibility: hidden";>
+                {{ form_widget(form.images, { 'attr': {'class': 'imagess'} }) }}
+
+                <p class="card-text">J'ajoute e photo</p>
+
+                </div>
+                <div class="icone-card-media d-flex justify-content-center">
+                    <img src="{{asset ('assets/icones')}}/icone-photo-ajout-blanc.svg" alt="Ajout photos">
+                </div>
+            </label>
         </div>
 
         <div class="card-media">
@@ -201,34 +216,18 @@
 <div class="bloc-toggle container-fluid">
     <article class="public-toggle d-flex flex-row justify-content-start">
         <p>Evènement public pour tous:</p>
-        <input type="checkbox" id="switch" /><label for="switch">Toggle</label>
+        {{ form_widget(form.isPrivatee) }}
+        <label for="personal_even_isPrivatee">Toggle</label>
     </article>
 </div>
 
 <!-- boutons CTA apercu et publier -->
 <div class="bloc-cta d-flex justify-content-center">
     <article class="btn-post">     
-        <button type="button" class="btn-cta-full">Publier mon évènement</button>
+        <button id="isPrivatee" name="isPrivatee" type="submit" class="btn-cta-full">Publier mon évènement</button>
     </article>  
 </div>
-
-{#    {{ form_widget(form.images, { 'attr': {'placeholder': 'calendar'} }) }}#}
-
-<hr>
-<hr>
-<hr>
-<hr>
-<hr>
-{{ form_start (form) }}
-{{ form_label (form.title, 'prout', {'label_attr': {'class': 'foo'}}) }}
-<input type="text" id="title" name="title" required="required" value="33"/>
-
-<button type="submit">GOOGOG</button>
 {{ form_end (form) }}
-
-
-
-
 
 {% endblock %}
 

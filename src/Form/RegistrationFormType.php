@@ -66,6 +66,7 @@ class RegistrationFormType extends AbstractType
                 'first_options'  => ['label' => false ],
                 'second_options' => ['label' => false ],
             ]);
+            
     }
 
     public function configureOptions(OptionsResolver $resolver): void
