@@ -75,7 +75,7 @@
 						<article class="card-event-focus"> <a id="cardlinkmix" href="{{ path('app_history_even_show',{ id: even.evenHistorique.id }) }}">
 							<section class="historic-event-focus">
 								<div class="img-focus">
-									<img src="{{asset ('assets/images/') }}1980-histo.png" alt="album-thriller" class="img-histo-focus">
+									<img src="{{asset ('assets/images/')}}{{foo}}.png" alt="album-thriller" class="img-histo-focus">
 								</div>
 								<div class="tag-focus">
 									<div class="title-focus">
@@ -121,7 +121,7 @@
 						<a href="{{ path('app_history_even_show',{ id: even.evenHistorique.id }) }}" id="cardlinkmix">
 							<section class="historic-event">
 								<div class="img-histo">
-									<img src="assets/images/2021-historic-event-small.png" alt="josephine-baker">
+									<img src="{{asset ('assets/images/')}}{{foo}}.png"" alt="josephine-baker">
 								</div>
 								<div class="tag">
 									<div class="title">

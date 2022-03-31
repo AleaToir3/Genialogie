@@ -18,8 +18,7 @@ class PersonalEvenType extends AbstractType
             ->add('title')
             ->add('description',TextType::class,[
                 'attr'=> [
-                    'class'=> 'title-area cassetoi',
-                    'placeholder'=>'prout'
+                    'class'=> 'title-area cassetoi'
                 ]
             ])
             ->add('isPrivatee')
